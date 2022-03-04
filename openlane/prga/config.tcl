@@ -37,19 +37,25 @@ set ::env(EXTRA_GDS_FILES) "\
 # Specifies the base sdc file to source before running Static Timing Analysis. (Default: $::env(OPENLANE_ROOT)/scripts/base.sdc)
 set ::env(BASE_SDC_FILE) $::env(DESIGN_DIR)/constraint.sdc
 
+set ::env(MACRO_PLACEMENT_CFG) $::env(DESIGN_DIR)/placement.cfg
+
 set ::env(DESIGN_IS_CORE) 0
+set ::env(FP_PDN_CORE_RING) 0
 
 set ::env(CLOCK_PORT) "prog_clk"
 set ::env(CLOCK_NET) "prog_clk"
-set ::env(CLOCK_PERIOD) "100"
+set ::env(CLOCK_PERIOD) "200"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2500 3000"
+set ::env(DIE_AREA) "0 0 2600 3100"
 
-set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
+#set ::env(PL_MACRO_HALO) "100 100"
+#set ::env(PL_MACRO_CHANNEL) "100 100"
+
+#set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 # set ::env(PL_BASIC_PLACEMENT) 1
-set ::env(PL_TARGET_DENSITY) 0.2
+set ::env(PL_TARGET_DENSITY) 0.40
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 

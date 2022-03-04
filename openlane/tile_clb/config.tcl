@@ -28,13 +28,14 @@ set ::env(VERILOG_FILES) "\
 set ::env(BASE_SDC_FILE) $::env(DESIGN_DIR)/constraint.sdc
 
 set ::env(DESIGN_IS_CORE) 0
+set ::env(FP_PDN_CORE_RING) 0
 
 set ::env(CLOCK_PORT) "clk prog_clk"
 set ::env(CLOCK_NET) "clk prog_clk"
 set ::env(CLOCK_PERIOD) "100"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 400 400"
+set ::env(DIE_AREA) "0 0 300 300"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 

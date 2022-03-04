@@ -1,5 +1,5 @@
 set_units -time ns
-create_clock [get_ports prog_clk]  -name PROG_CLK  -period 100 -waveform {0 50}
+create_clock [get_ports prog_clk]  -name PROG_CLK  -period 200 -waveform {0 100}
 
 # set_case_analysis 0 _2132_/Q
 # set_case_analysis 0 _2152_/Q
