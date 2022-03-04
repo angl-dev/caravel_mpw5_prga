@@ -21907,14 +21907,16 @@ module prga_ram_1r1w #(
     localparam  DATA_ROWS = RAM_ROWS == 0 ? (1 << ADDR_WIDTH) : RAM_ROWS;
     reg [DATA_WIDTH - 1:0] data [0:DATA_ROWS - 1];
 
+    /*
     integer i, j;
     // initial
     //     for (j = 0; j < DATA_WIDTH; j = j + 1) begin
     //         dout[j] = $unsigned($random) % 2;
 
-    //         for (i = 0; i < DATA_ROWS; i = i + 1)
-    //             data[i][j] = $unsigned($random) % 2;
-    //     end
+            for (i = 0; i < DATA_ROWS; i = i + 1)
+                data[i][j] = $unsigned($random) % 2;
+        end
+    */
 
     always @(posedge clk) begin
         if (rst) begin
