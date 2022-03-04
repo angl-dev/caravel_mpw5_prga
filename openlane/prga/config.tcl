@@ -39,14 +39,15 @@ set ::env(BASE_SDC_FILE) $::env(DESIGN_DIR)/constraint.sdc
 
 set ::env(DESIGN_IS_CORE) 0
 
-set ::env(CLOCK_PORT) "prog_clk"
-set ::env(CLOCK_NET) "prog_clk"
-set ::env(CLOCK_PERIOD) "100"
+set ::env(CLOCK_PORT) "ipin_x0y1_0 prog_clk"
+set ::env(CLOCK_NET) "ipin_x0y1_0 prog_clk"
+set ::env(CLOCK_PERIOD) "400"
 
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 2500 3000"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
+set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
 
 # set ::env(PL_BASIC_PLACEMENT) 1
 set ::env(PL_TARGET_DENSITY) 0.2
