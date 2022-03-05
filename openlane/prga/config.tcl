@@ -63,6 +63,12 @@ set ::env(GLB_RT_MAXLAYER) 5
 set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
 
+# Specifies the number of threads to be used in TritonRoute. Can be overriden via environment variable. (Default: 2)
+set ::env(ROUTING_CORES) 8
+
+# Specifies the maximum number of optimization iterations during Detailed Routing in TritonRoute. (Default: 64)
+set ::env(DRT_OPT_ITERS) 20
+
 set ::env(DIODE_INSERTION_STRATEGY) 4 
 # If you're going to use multiple power domains, then disable cvc run.
 set ::env(RUN_CVC) 1
