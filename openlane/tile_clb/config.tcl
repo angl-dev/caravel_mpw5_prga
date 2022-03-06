@@ -28,21 +28,27 @@ set ::env(VERILOG_FILES) "\
 set ::env(BASE_SDC_FILE) $::env(DESIGN_DIR)/constraint.sdc
 
 set ::env(DESIGN_IS_CORE) 0
-set ::env(FP_PDN_CORE_RING) 0
+# [Ang]: We don't need to create PDN ring for each CLB
+# set ::env(FP_PDN_CORE_RING) 0
 
-set ::env(CLOCK_PORT) "clk prog_clk"
-set ::env(CLOCK_NET) "clk prog_clk"
-set ::env(CLOCK_PERIOD) "10"
+set ::env(CLOCK_PORT) "prog_clk clk"
+set ::env(CLOCK_NET) "prog_clk clk"
+set ::env(CLOCK_PERIOD) "1000"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 200 200"
+set ::env(DIE_AREA) "0 0 156.4 157.76"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(FP_IO_HMETAL) 2
 set ::env(FP_IO_VMETAL) 3
 
+set ::env(BOTTOM_MARGIN_MULT) 1
+set ::env(TOP_MARGIN_MULT)    1
+set ::env(LEFT_MARGIN_MULT)   12
+set ::env(RIGHT_MARGIN_MULT)  12
+
 # set ::env(PL_BASIC_PLACEMENT) 1
-set ::env(PL_TARGET_DENSITY) 0.5
+set ::env(PL_TARGET_DENSITY) 0.50
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
