@@ -38,14 +38,14 @@ set ::env(EXTRA_GDS_FILES) "\
 set ::env(BASE_SDC_FILE) $::env(DESIGN_DIR)/constraint.sdc
 
 set ::env(DESIGN_IS_CORE) 0
-set ::env(FP_PDN_CORE_RING) 0
+# set ::env(FP_PDN_CORE_RING) 0
 
-set ::env(CLOCK_PORT) "ipin_x0y1_0 prog_clk"
-set ::env(CLOCK_NET) "ipin_x0y1_0 prog_clk"
-set ::env(CLOCK_PERIOD) "400"
+set ::env(CLOCK_PORT) "prog_clk ipin_x0y1_0"
+set ::env(CLOCK_NET) "prog_clk ipin_x0y1_0"
+set ::env(CLOCK_PERIOD) "1000"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2600 3100"
+set ::env(DIE_AREA) "0 0 2600 3200"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
@@ -57,7 +57,10 @@ set ::env(PL_TARGET_DENSITY) 0.40
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
 # where the PDN is planned on metal 5. So, to avoid having shorts between routes
 # in this macro and the top level metal 5 stripes, we have to restrict routes to metal4.  
+set ::env(GLB_RT_MINLAYER) 2
 set ::env(GLB_RT_MAXLAYER) 5
+set ::env(DRT_MIN_LAYER) 1
+set ::env(DRT_MAX_LAYER) 5
 
 # You can draw more power domains if you need to 
 set ::env(VDD_NETS) [list {vccd1}]
@@ -67,7 +70,7 @@ set ::env(GND_NETS) [list {vssd1}]
 set ::env(ROUTING_CORES) 8
 
 # Specifies the maximum number of optimization iterations during Detailed Routing in TritonRoute. (Default: 64)
-set ::env(DRT_OPT_ITERS) 20
+# set ::env(DRT_OPT_ITERS) 20
 
 set ::env(DIODE_INSERTION_STRATEGY) 4 
 # If you're going to use multiple power domains, then disable cvc run.

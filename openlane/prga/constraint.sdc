@@ -1,6 +1,6 @@
 set_units -time ns
 create_clock [get_ports ipin_x0y1_0]  -name CLK  -period 400 -waveform {0 200}
-create_clock [get_ports prog_clk]  -name PROG_CLK  -period 100 -waveform {0 50}
+create_clock [get_ports prog_clk]  -name PROG_CLK  -period 1000 -waveform {0 500}
 
 # set_case_analysis 0 _2132_/Q
 # set_case_analysis 0 _2152_/Q
