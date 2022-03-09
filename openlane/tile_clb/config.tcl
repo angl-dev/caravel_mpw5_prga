@@ -36,7 +36,7 @@ set ::env(CLOCK_NET) "prog_clk clk"
 set ::env(CLOCK_PERIOD) "1000"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 156.4 157.76"
+set ::env(DIE_AREA) "0 0 165.60 244.80"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(FP_IO_HMETAL) 2

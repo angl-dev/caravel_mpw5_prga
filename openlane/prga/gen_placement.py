@@ -23,9 +23,9 @@ top_hpitch  = 153.18    # vertical pitch of horizontal strips
 top_hwidth  =   1.60    # width of the horizontal strips
 top_hspace  =   1.70    # min spacing between any horizontal PDN
 
-# the goal is to place one CLB every (2*top_vpitch, 2*top_hpitch)
+# the goal is to place one CLB every (2*top_vpitch, 2.5*top_hpitch)
 num_clb_x   = 8
-num_clb_y   = 10
+num_clb_y   = 8
 
 # Get PDN shapes in tile_clb
 def get_clb_pdn_met4 ():
@@ -111,6 +111,6 @@ if __name__ == '__main__':
     with open(sys.argv[3], 'w') as f:
         for x, y in product(range(num_clb_x), range(num_clb_y)):
             f.write ("i_tile_x{}y{} {:>4.2f} {:>4.2f} N\n"
-                    .format(x, y,
+                    .format(x + 1, y + 1,
                         macro_hoffset + x * top_vpitch * 2,
-                        macro_voffset + y * top_hpitch * 2))
+                        macro_voffset + y * top_hpitch * 2.5))
