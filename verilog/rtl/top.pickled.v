@@ -1818,6 +1818,10 @@ module top (
         ,.prog_we_o(_i_sbox_x1y0nw__prog_we_o)
         );
     tile_clb i_tile_x1y1 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x1y1__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x1y1__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x1y1sw__so_u1y0n_L1)
@@ -1882,6 +1886,10 @@ module top (
         ,.prog_we_o(_i_sbox_x1y1sw__prog_we_o)
         );
     tile_clb i_tile_x1y2 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x1y2__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x1y2__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x1y2sw__so_u1y0n_L1)
@@ -1948,6 +1956,10 @@ module top (
         ,.prog_we_o(_i_sbox_x1y2sw__prog_we_o)
         );
     tile_clb i_tile_x1y3 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x1y3__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x1y3__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x1y3sw__so_u1y0n_L1)
@@ -2014,6 +2026,10 @@ module top (
         ,.prog_we_o(_i_sbox_x1y3sw__prog_we_o)
         );
     tile_clb i_tile_x1y4 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x1y4__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x1y4__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x1y4sw__so_u1y0n_L1)
@@ -2080,6 +2096,10 @@ module top (
         ,.prog_we_o(_i_sbox_x1y4sw__prog_we_o)
         );
     tile_clb i_tile_x1y5 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x1y5__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x1y5__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x1y5sw__so_u1y0n_L1)
@@ -2146,6 +2166,10 @@ module top (
         ,.prog_we_o(_i_sbox_x1y5sw__prog_we_o)
         );
     tile_clb i_tile_x1y6 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x1y6__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x1y6__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x1y6sw__so_u1y0n_L1)
@@ -2212,6 +2236,10 @@ module top (
         ,.prog_we_o(_i_sbox_x1y6sw__prog_we_o)
         );
     tile_clb i_tile_x1y7 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x1y7__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x1y7__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x1y7sw__so_u1y0n_L1)
@@ -2278,6 +2306,10 @@ module top (
         ,.prog_we_o(_i_sbox_x1y7sw__prog_we_o)
         );
     tile_clb i_tile_x1y8 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x1y8__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x1y8__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x1y8sw__so_u1y0n_L1)
@@ -2400,6 +2432,10 @@ module top (
         ,.prog_we_o(_i_sbox_x2y0nw__prog_we_o)
         );
     tile_clb i_tile_x2y1 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x2y1__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x2y1__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x2y1sw__so_u1y0n_L1)
@@ -2466,6 +2502,10 @@ module top (
         ,.prog_we_o(_i_sbox_x2y1sw__prog_we_o)
         );
     tile_clb i_tile_x2y2 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x2y2__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x2y2__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x2y2sw__so_u1y0n_L1)
@@ -2534,6 +2574,10 @@ module top (
         ,.prog_we_o(_i_sbox_x2y2sw__prog_we_o)
         );
     tile_clb i_tile_x2y3 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x2y3__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x2y3__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x2y3sw__so_u1y0n_L1)
@@ -2602,6 +2646,10 @@ module top (
         ,.prog_we_o(_i_sbox_x2y3sw__prog_we_o)
         );
     tile_clb i_tile_x2y4 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x2y4__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x2y4__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x2y4sw__so_u1y0n_L1)
@@ -2670,6 +2718,10 @@ module top (
         ,.prog_we_o(_i_sbox_x2y4sw__prog_we_o)
         );
     tile_clb i_tile_x2y5 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x2y5__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x2y5__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x2y5sw__so_u1y0n_L1)
@@ -2738,6 +2790,10 @@ module top (
         ,.prog_we_o(_i_sbox_x2y5sw__prog_we_o)
         );
     tile_clb i_tile_x2y6 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x2y6__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x2y6__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x2y6sw__so_u1y0n_L1)
@@ -2806,6 +2862,10 @@ module top (
         ,.prog_we_o(_i_sbox_x2y6sw__prog_we_o)
         );
     tile_clb i_tile_x2y7 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x2y7__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x2y7__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x2y7sw__so_u1y0n_L1)
@@ -2874,6 +2934,10 @@ module top (
         ,.prog_we_o(_i_sbox_x2y7sw__prog_we_o)
         );
     tile_clb i_tile_x2y8 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x2y8__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x2y8__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x2y8sw__so_u1y0n_L1)
@@ -2999,6 +3063,10 @@ module top (
         ,.prog_we_o(_i_sbox_x3y0nw__prog_we_o)
         );
     tile_clb i_tile_x3y1 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x3y1__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x3y1__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x3y1sw__so_u1y0n_L1)
@@ -3065,6 +3133,10 @@ module top (
         ,.prog_we_o(_i_sbox_x3y1sw__prog_we_o)
         );
     tile_clb i_tile_x3y2 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x3y2__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x3y2__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x3y2sw__so_u1y0n_L1)
@@ -3133,6 +3205,10 @@ module top (
         ,.prog_we_o(_i_sbox_x3y2sw__prog_we_o)
         );
     tile_clb i_tile_x3y3 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x3y3__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x3y3__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x3y3sw__so_u1y0n_L1)
@@ -3201,6 +3277,10 @@ module top (
         ,.prog_we_o(_i_sbox_x3y3sw__prog_we_o)
         );
     tile_clb i_tile_x3y4 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x3y4__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x3y4__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x3y4sw__so_u1y0n_L1)
@@ -3269,6 +3349,10 @@ module top (
         ,.prog_we_o(_i_sbox_x3y4sw__prog_we_o)
         );
     tile_clb i_tile_x3y5 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x3y5__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x3y5__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x3y5sw__so_u1y0n_L1)
@@ -3337,6 +3421,10 @@ module top (
         ,.prog_we_o(_i_sbox_x3y5sw__prog_we_o)
         );
     tile_clb i_tile_x3y6 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x3y6__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x3y6__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x3y6sw__so_u1y0n_L1)
@@ -3405,6 +3493,10 @@ module top (
         ,.prog_we_o(_i_sbox_x3y6sw__prog_we_o)
         );
     tile_clb i_tile_x3y7 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x3y7__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x3y7__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x3y7sw__so_u1y0n_L1)
@@ -3473,6 +3565,10 @@ module top (
         ,.prog_we_o(_i_sbox_x3y7sw__prog_we_o)
         );
     tile_clb i_tile_x3y8 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x3y8__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x3y8__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x3y8sw__so_u1y0n_L1)
@@ -3598,6 +3694,10 @@ module top (
         ,.prog_we_o(_i_sbox_x4y0nw__prog_we_o)
         );
     tile_clb i_tile_x4y1 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x4y1__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x4y1__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x4y1sw__so_u1y0n_L1)
@@ -3664,6 +3764,10 @@ module top (
         ,.prog_we_o(_i_sbox_x4y1sw__prog_we_o)
         );
     tile_clb i_tile_x4y2 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x4y2__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x4y2__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x4y2sw__so_u1y0n_L1)
@@ -3732,6 +3836,10 @@ module top (
         ,.prog_we_o(_i_sbox_x4y2sw__prog_we_o)
         );
     tile_clb i_tile_x4y3 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x4y3__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x4y3__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x4y3sw__so_u1y0n_L1)
@@ -3800,6 +3908,10 @@ module top (
         ,.prog_we_o(_i_sbox_x4y3sw__prog_we_o)
         );
     tile_clb i_tile_x4y4 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x4y4__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x4y4__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x4y4sw__so_u1y0n_L1)
@@ -3868,6 +3980,10 @@ module top (
         ,.prog_we_o(_i_sbox_x4y4sw__prog_we_o)
         );
     tile_clb i_tile_x4y5 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x4y5__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x4y5__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x4y5sw__so_u1y0n_L1)
@@ -3936,6 +4052,10 @@ module top (
         ,.prog_we_o(_i_sbox_x4y5sw__prog_we_o)
         );
     tile_clb i_tile_x4y6 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x4y6__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x4y6__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x4y6sw__so_u1y0n_L1)
@@ -4004,6 +4124,10 @@ module top (
         ,.prog_we_o(_i_sbox_x4y6sw__prog_we_o)
         );
     tile_clb i_tile_x4y7 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x4y7__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x4y7__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x4y7sw__so_u1y0n_L1)
@@ -4072,6 +4196,10 @@ module top (
         ,.prog_we_o(_i_sbox_x4y7sw__prog_we_o)
         );
     tile_clb i_tile_x4y8 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x4y8__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x4y8__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x4y8sw__so_u1y0n_L1)
@@ -4197,6 +4325,10 @@ module top (
         ,.prog_we_o(_i_sbox_x5y0nw__prog_we_o)
         );
     tile_clb i_tile_x5y1 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x5y1__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x5y1__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x5y1sw__so_u1y0n_L1)
@@ -4263,6 +4395,10 @@ module top (
         ,.prog_we_o(_i_sbox_x5y1sw__prog_we_o)
         );
     tile_clb i_tile_x5y2 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x5y2__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x5y2__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x5y2sw__so_u1y0n_L1)
@@ -4331,6 +4467,10 @@ module top (
         ,.prog_we_o(_i_sbox_x5y2sw__prog_we_o)
         );
     tile_clb i_tile_x5y3 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x5y3__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x5y3__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x5y3sw__so_u1y0n_L1)
@@ -4399,6 +4539,10 @@ module top (
         ,.prog_we_o(_i_sbox_x5y3sw__prog_we_o)
         );
     tile_clb i_tile_x5y4 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x5y4__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x5y4__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x5y4sw__so_u1y0n_L1)
@@ -4467,6 +4611,10 @@ module top (
         ,.prog_we_o(_i_sbox_x5y4sw__prog_we_o)
         );
     tile_clb i_tile_x5y5 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x5y5__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x5y5__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x5y5sw__so_u1y0n_L1)
@@ -4535,6 +4683,10 @@ module top (
         ,.prog_we_o(_i_sbox_x5y5sw__prog_we_o)
         );
     tile_clb i_tile_x5y6 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x5y6__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x5y6__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x5y6sw__so_u1y0n_L1)
@@ -4603,6 +4755,10 @@ module top (
         ,.prog_we_o(_i_sbox_x5y6sw__prog_we_o)
         );
     tile_clb i_tile_x5y7 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x5y7__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x5y7__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x5y7sw__so_u1y0n_L1)
@@ -4671,6 +4827,10 @@ module top (
         ,.prog_we_o(_i_sbox_x5y7sw__prog_we_o)
         );
     tile_clb i_tile_x5y8 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x5y8__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x5y8__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x5y8sw__so_u1y0n_L1)
@@ -4796,6 +4956,10 @@ module top (
         ,.prog_we_o(_i_sbox_x6y0nw__prog_we_o)
         );
     tile_clb i_tile_x6y1 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x6y1__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x6y1__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x6y1sw__so_u1y0n_L1)
@@ -4862,6 +5026,10 @@ module top (
         ,.prog_we_o(_i_sbox_x6y1sw__prog_we_o)
         );
     tile_clb i_tile_x6y2 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x6y2__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x6y2__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x6y2sw__so_u1y0n_L1)
@@ -4930,6 +5098,10 @@ module top (
         ,.prog_we_o(_i_sbox_x6y2sw__prog_we_o)
         );
     tile_clb i_tile_x6y3 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x6y3__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x6y3__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x6y3sw__so_u1y0n_L1)
@@ -4998,6 +5170,10 @@ module top (
         ,.prog_we_o(_i_sbox_x6y3sw__prog_we_o)
         );
     tile_clb i_tile_x6y4 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x6y4__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x6y4__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x6y4sw__so_u1y0n_L1)
@@ -5066,6 +5242,10 @@ module top (
         ,.prog_we_o(_i_sbox_x6y4sw__prog_we_o)
         );
     tile_clb i_tile_x6y5 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x6y5__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x6y5__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x6y5sw__so_u1y0n_L1)
@@ -5134,6 +5314,10 @@ module top (
         ,.prog_we_o(_i_sbox_x6y5sw__prog_we_o)
         );
     tile_clb i_tile_x6y6 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x6y6__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x6y6__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x6y6sw__so_u1y0n_L1)
@@ -5202,6 +5386,10 @@ module top (
         ,.prog_we_o(_i_sbox_x6y6sw__prog_we_o)
         );
     tile_clb i_tile_x6y7 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x6y7__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x6y7__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x6y7sw__so_u1y0n_L1)
@@ -5270,6 +5458,10 @@ module top (
         ,.prog_we_o(_i_sbox_x6y7sw__prog_we_o)
         );
     tile_clb i_tile_x6y8 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x6y8__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x6y8__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x6y8sw__so_u1y0n_L1)
@@ -5395,6 +5587,10 @@ module top (
         ,.prog_we_o(_i_sbox_x7y0nw__prog_we_o)
         );
     tile_clb i_tile_x7y1 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x7y1__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x7y1__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x7y1sw__so_u1y0n_L1)
@@ -5461,6 +5657,10 @@ module top (
         ,.prog_we_o(_i_sbox_x7y1sw__prog_we_o)
         );
     tile_clb i_tile_x7y2 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x7y2__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x7y2__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x7y2sw__so_u1y0n_L1)
@@ -5529,6 +5729,10 @@ module top (
         ,.prog_we_o(_i_sbox_x7y2sw__prog_we_o)
         );
     tile_clb i_tile_x7y3 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x7y3__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x7y3__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x7y3sw__so_u1y0n_L1)
@@ -5597,6 +5801,10 @@ module top (
         ,.prog_we_o(_i_sbox_x7y3sw__prog_we_o)
         );
     tile_clb i_tile_x7y4 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x7y4__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x7y4__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x7y4sw__so_u1y0n_L1)
@@ -5665,6 +5873,10 @@ module top (
         ,.prog_we_o(_i_sbox_x7y4sw__prog_we_o)
         );
     tile_clb i_tile_x7y5 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x7y5__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x7y5__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x7y5sw__so_u1y0n_L1)
@@ -5733,6 +5945,10 @@ module top (
         ,.prog_we_o(_i_sbox_x7y5sw__prog_we_o)
         );
     tile_clb i_tile_x7y6 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x7y6__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x7y6__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x7y6sw__so_u1y0n_L1)
@@ -5801,6 +6017,10 @@ module top (
         ,.prog_we_o(_i_sbox_x7y6sw__prog_we_o)
         );
     tile_clb i_tile_x7y7 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x7y7__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x7y7__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x7y7sw__so_u1y0n_L1)
@@ -5869,6 +6089,10 @@ module top (
         ,.prog_we_o(_i_sbox_x7y7sw__prog_we_o)
         );
     tile_clb i_tile_x7y8 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x7y8__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x7y8__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x7y8sw__so_u1y0n_L1)
@@ -5993,6 +6217,10 @@ module top (
         ,.prog_we_o(_i_sbox_x8y0nw__prog_we_o)
         );
     tile_clb i_tile_x8y1 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x8y1__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x8y1__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x8y1sw__so_u1y0n_L1)
@@ -6058,6 +6286,10 @@ module top (
         ,.prog_we_o(_i_sbox_x8y1sw__prog_we_o)
         );
     tile_clb i_tile_x8y2 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x8y2__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x8y2__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x8y2sw__so_u1y0n_L1)
@@ -6125,6 +6357,10 @@ module top (
         ,.prog_we_o(_i_sbox_x8y2sw__prog_we_o)
         );
     tile_clb i_tile_x8y3 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x8y3__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x8y3__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x8y3sw__so_u1y0n_L1)
@@ -6192,6 +6428,10 @@ module top (
         ,.prog_we_o(_i_sbox_x8y3sw__prog_we_o)
         );
     tile_clb i_tile_x8y4 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x8y4__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x8y4__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x8y4sw__so_u1y0n_L1)
@@ -6259,6 +6499,10 @@ module top (
         ,.prog_we_o(_i_sbox_x8y4sw__prog_we_o)
         );
     tile_clb i_tile_x8y5 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x8y5__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x8y5__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x8y5sw__so_u1y0n_L1)
@@ -6326,6 +6570,10 @@ module top (
         ,.prog_we_o(_i_sbox_x8y5sw__prog_we_o)
         );
     tile_clb i_tile_x8y6 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x8y6__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x8y6__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x8y6sw__so_u1y0n_L1)
@@ -6393,6 +6641,10 @@ module top (
         ,.prog_we_o(_i_sbox_x8y6sw__prog_we_o)
         );
     tile_clb i_tile_x8y7 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x8y7__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x8y7__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x8y7sw__so_u1y0n_L1)
@@ -6460,6 +6712,10 @@ module top (
         ,.prog_we_o(_i_sbox_x8y7sw__prog_we_o)
         );
     tile_clb i_tile_x8y8 (
+`ifdef USE_POWER_PINS
+        .vssd1(vssd1),
+        .vccd1(vccd1),
+`endif
         .cu_x0y0n_L1(_i_tile_x8y8__cu_x0y0n_L1)
         ,.cu_x0y0s_L1(_i_tile_x8y8__cu_x0y0s_L1)
         ,.bi_u1y0n_L1(_i_sbox_x8y8sw__so_u1y0n_L1)
