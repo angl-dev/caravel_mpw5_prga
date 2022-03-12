@@ -47,6 +47,8 @@ set ::env(TOP_MARGIN_MULT)    1
 set ::env(LEFT_MARGIN_MULT)   12
 set ::env(RIGHT_MARGIN_MULT)  12
 
+set ::env(PDN_CFG) $script_dir/pdn_cfg.tcl
+
 # set ::env(PL_BASIC_PLACEMENT) 1
 set ::env(PL_TARGET_DENSITY) 0.50
 

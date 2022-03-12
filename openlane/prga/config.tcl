@@ -66,6 +66,10 @@ set ::env(DRT_MAX_LAYER) 5
 set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
 
+# custom PDN
+set ::env(FP_PDN_ENABLE_MACROS_GRID) 1
+set ::env(PDN_CFG) $script_dir/pdn_cfg.tcl
+
 # Specifies the number of threads to be used in TritonRoute. Can be overriden via environment variable. (Default: 2)
 set ::env(ROUTING_CORES) 8
 

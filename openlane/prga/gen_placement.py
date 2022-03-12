@@ -110,7 +110,7 @@ if __name__ == '__main__':
 
     with open(sys.argv[3], 'w') as f:
         for x, y in product(range(num_clb_x), range(num_clb_y)):
-            f.write ("i_tile_x{}y{} {:>4.2f} {:>4.2f} N\n"
+            f.write ("i_tile_x{}y{} {:>4.2f} {:>4.2f} R0\n"
                     .format(x + 1, y + 1,
                         macro_hoffset + x * top_vpitch * 2,
                         macro_voffset + y * top_hpitch * 2.5))
