@@ -45,7 +45,7 @@ set ::env(CLOCK_NET) "prog_clk ipin_x0y1_0"
 set ::env(CLOCK_PERIOD) "1000"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2750 3600"
+set ::env(DIE_AREA) "0 0 2750 3400"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
