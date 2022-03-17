@@ -26,7 +26,7 @@ export PDK_MAGIC_COMMIT=7d601628e4e05fd17fcb80c3552dacb64e9f6e7b
 export OPENLANE_TAG=2022.02.23_02.50.41
 
 # Install lite version of caravel, (1): caravel-lite, (0): caravel
-CARAVEL_LITE?=1
+CARAVEL_LITE?=0
 
 MPW_TAG ?= mpw-5c
 
@@ -65,7 +65,7 @@ setup: install check-env install_mcw pdk openlane
 # Openlane
 blocks=$(shell cd openlane && find * -maxdepth 0 -type d)
 .PHONY: $(blocks)
-$(blocks):
+$(blocks): %:
 	export CARAVEL_ROOT=$(CARAVEL_ROOT) && cd openlane && $(MAKE) $*
 
 dv_patterns=$(shell cd verilog/dv && find * -maxdepth 0 -type d)
