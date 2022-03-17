@@ -57,10 +57,10 @@ set ::env(PL_TARGET_DENSITY) 0.30
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
 # where the PDN is planned on metal 5. So, to avoid having shorts between routes
 # in this macro and the top level metal 5 stripes, we have to restrict routes to metal4.  
-set ::env(GLB_RT_MINLAYER) 2
-set ::env(GLB_RT_MAXLAYER) 5
-set ::env(DRT_MIN_LAYER) 1
-set ::env(DRT_MAX_LAYER) 5
+set ::env(RT_MIN_LAYER) met1
+set ::env(RT_MAX_LAYER) met4
+set ::env(DRT_MIN_LAYER) li1
+set ::env(DRT_MAX_LAYER) met4
 
 # You can draw more power domains if you need to 
 set ::env(VDD_NETS) [list {vccd1}]
@@ -71,7 +71,7 @@ set ::env(FP_PDN_ENABLE_MACROS_GRID) 1
 set ::env(PDN_CFG) $script_dir/pdn_cfg.tcl
 
 # Specifies the number of threads to be used in TritonRoute. Can be overriden via environment variable. (Default: 2)
-set ::env(ROUTING_CORES) 20
+set ::env(ROUTING_CORES) 4
 
 # Specifies the maximum number of optimization iterations during Detailed Routing in TritonRoute. (Default: 64)
 # set ::env(DRT_OPT_ITERS) 20

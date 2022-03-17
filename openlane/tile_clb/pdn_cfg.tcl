@@ -26,10 +26,8 @@ set_voltage_domain -name CORE -power $::env(VDD_NET) -ground $::env(GND_NET)
 
 # Assesses whether the deisgn is the core of the chip or not based on the 
 # value of $::env(DESIGN_IS_CORE) and uses the appropriate stdcell section
-define_pdn_grid -name stdcell_grid -starts_with POWER -voltage_domain CORE -pins {"met3"}
+define_pdn_grid -name stdcell_grid -starts_with POWER -voltage_domain CORE -pins {"met2"}
 add_pdn_stripe -grid stdcell_grid -layer "met2" -width 0.28 -pitch 51.52 -offset 5.29 -starts_with POWER
-add_pdn_stripe -grid stdcell_grid -layer "met3" -width 0.6 -pitch 65.28 -offset 5.78 -starts_with POWER
-add_pdn_connect -grid stdcell_grid -layer {"met2" "met3"}
 
 # Adds the standard cell rails
 add_pdn_stripe -grid stdcell_grid -layer $::env(FP_PDN_RAILS_LAYER) -width $::env(FP_PDN_RAIL_WIDTH) -followpins -starts_with POWER

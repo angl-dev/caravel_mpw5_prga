@@ -39,8 +39,8 @@ set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 165.60 217.60"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
-set ::env(FP_IO_HMETAL) 2
-set ::env(FP_IO_VMETAL) 3
+set ::env(FP_IO_HLAYER) met1
+set ::env(FP_IO_VLAYER) met2
 
 set ::env(BOTTOM_MARGIN_MULT) 1
 set ::env(TOP_MARGIN_MULT)    1
@@ -56,10 +56,10 @@ set ::env(PL_TARGET_DENSITY) 0.56
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
 # where the PDN is planned on metal 5. So, to avoid having shorts between routes
 # in this macro and the top level metal 5 stripes, we have to restrict routes to metal4.  
-set ::env(GLB_RT_MINLAYER) 2
-set ::env(GLB_RT_MAXLAYER) 3
-set ::env(DRT_MIN_LAYER) 1
-set ::env(DRT_MAX_LAYER) 3
+set ::env(RT_MIN_LAYER) met1
+set ::env(RT_MAX_LAYER) met2
+set ::env(DRT_MIN_LAYER) li1
+set ::env(DRT_MAX_LAYER) met2
 
 # You can draw more power domains if you need to 
 set ::env(VDD_NETS) [list {vccd1}]
