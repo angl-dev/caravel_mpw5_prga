@@ -42,12 +42,6 @@ set macro {
     connect { {met2_PIN_ver met3} {met3 $::env(FP_PDN_LOWER_LAYER)} }
 }
 
-        # $::env(FP_PDN_LOWER_LAYER) {
-        #     width $::env(FP_PDN_VWIDTH)
-        #     pitch $::env(FP_PDN_VPITCH)
-        #     offset $::env(FP_PDN_VOFFSET)
-        # }
-
 set ::halo [list $::env(FP_PDN_HORIZONTAL_HALO) $::env(FP_PDN_VERTICAL_HALO)]
 pdngen::specify_grid macro [subst $macro]
 

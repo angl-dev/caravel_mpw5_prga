@@ -42,16 +42,19 @@ set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_PORT) "prog_clk ipin_x0y1_0"
 set ::env(CLOCK_NET) "prog_clk ipin_x0y1_0"
-set ::env(CLOCK_PERIOD) "1000"
+set ::env(CLOCK_PERIOD) "1500"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2750 3400"
+set ::env(DIE_AREA) "0 0 2600 3200"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
+set ::env(FP_TAP_HORIZONTAL_HALO)   5.98
+set ::env(FP_TAP_VERTICAL_HALO)     5.44
 
-# set ::env(PL_BASIC_PLACEMENT) 1
-set ::env(PL_TARGET_DENSITY) 0.30
+set ::env(PL_TARGET_DENSITY)            0.125
+set ::env(PL_RESIZER_MAX_WIRE_LENGTH)   250
+set ::env(CTS_CLK_MAX_WIRE_LENGTH)      250
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
@@ -62,6 +65,17 @@ set ::env(RT_MAX_LAYER) met4
 set ::env(DRT_MIN_LAYER) li1
 set ::env(DRT_MAX_LAYER) met4
 
+# antenna fix
+set ::env(DIODE_PADDING)    2   ;# default: 2
+                                ;# increased diode padding to reduce
+                                ;# post-antenna-fix routing congestion
+set ::env(GLB_RT_MACRO_EXTENSION) 0     ;# default: 0
+# set ::env(GLB_RT_ADJUSTMENT) 0.5        ;# default: 0.3
+set ::env(GLB_RT_LAYER_ADJUSTMENTS)     {0.99,0.3,0.3,0.3,0.3}  ;# default: 0.99 0 0 0 0
+set ::env(GLB_RT_ANT_LAYER_ADJUSTMENTS) {0.99,0.0,0.0,0.0,0.0}  ;# default: 0.99 0 0 0 0
+
+# set ::env(GLB_RT_ALLOW_CONGESTION) 1
+
 # You can draw more power domains if you need to 
 set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
@@ -71,11 +85,12 @@ set ::env(FP_PDN_ENABLE_MACROS_GRID) 1
 set ::env(PDN_CFG) $script_dir/pdn_cfg.tcl
 
 # Specifies the number of threads to be used in TritonRoute. Can be overriden via environment variable. (Default: 2)
-set ::env(ROUTING_CORES) 4
+set ::env(ROUTING_CORES) 8
 
 # Specifies the maximum number of optimization iterations during Detailed Routing in TritonRoute. (Default: 64)
 # set ::env(DRT_OPT_ITERS) 20
 
-set ::env(DIODE_INSERTION_STRATEGY) 5
+set ::env(DIODE_INSERTION_STRATEGY)         3
+
 # If you're going to use multiple power domains, then disable cvc run.
 set ::env(RUN_CVC) 1

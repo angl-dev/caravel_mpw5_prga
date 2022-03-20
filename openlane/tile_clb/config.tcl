@@ -42,15 +42,15 @@ set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(FP_IO_HLAYER) met1
 set ::env(FP_IO_VLAYER) met2
 
-set ::env(BOTTOM_MARGIN_MULT) 1
-set ::env(TOP_MARGIN_MULT)    1
+set ::env(BOTTOM_MARGIN_MULT) 2
+set ::env(TOP_MARGIN_MULT)    2
 set ::env(LEFT_MARGIN_MULT)   12
 set ::env(RIGHT_MARGIN_MULT)  12
 
 set ::env(PDN_CFG) $script_dir/pdn_cfg.tcl
 
 # set ::env(PL_BASIC_PLACEMENT) 1
-set ::env(PL_TARGET_DENSITY) 0.56
+set ::env(PL_TARGET_DENSITY) 0.57
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
@@ -65,6 +65,6 @@ set ::env(DRT_MAX_LAYER) met2
 set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
 
-set ::env(DIODE_INSERTION_STRATEGY) 5
+set ::env(DIODE_INSERTION_STRATEGY) 3
 # If you're going to use multiple power domains, then disable cvc run.
 set ::env(RUN_CVC) 0

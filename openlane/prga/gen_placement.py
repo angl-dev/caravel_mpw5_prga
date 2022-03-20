@@ -23,7 +23,10 @@ top_hpitch  = 153.18    # vertical pitch of horizontal strips
 top_hwidth  =   1.60    # width of the horizontal strips
 top_hspace  =   1.70    # min spacing between any horizontal PDN
 
-# the goal is to place one CLB every (2*top_vpitch, 2.5*top_hpitch)
+# Vertical multiplier
+vmult = 2.5
+
+# the goal is to place one CLB every (2*top_vpitch, vmult*top_hpitch)
 num_clb_x   = 8
 num_clb_y   = 8
 
@@ -113,4 +116,4 @@ if __name__ == '__main__':
             f.write ("i_tile_x{}y{} {:>4.2f} {:>4.2f} R0\n"
                     .format(x + 1, y + 1,
                         macro_hoffset + x * top_vpitch * 2,
-                        macro_voffset + y * top_hpitch * 2.5))
+                        macro_voffset + y * top_hpitch * vmult))
