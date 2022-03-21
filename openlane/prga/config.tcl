@@ -49,8 +49,6 @@ set ::env(DIE_AREA) "0 0 2600 3200"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
-set ::env(FP_TAP_HORIZONTAL_HALO)   5.98
-set ::env(FP_TAP_VERTICAL_HALO)     5.44
 
 set ::env(PL_TARGET_DENSITY)            0.125
 set ::env(PL_RESIZER_MAX_WIRE_LENGTH)   250
@@ -64,17 +62,6 @@ set ::env(RT_MIN_LAYER) met1
 set ::env(RT_MAX_LAYER) met4
 set ::env(DRT_MIN_LAYER) li1
 set ::env(DRT_MAX_LAYER) met4
-
-# antenna fix
-set ::env(DIODE_PADDING)    2   ;# default: 2
-                                ;# increased diode padding to reduce
-                                ;# post-antenna-fix routing congestion
-set ::env(GLB_RT_MACRO_EXTENSION) 0     ;# default: 0
-# set ::env(GLB_RT_ADJUSTMENT) 0.5        ;# default: 0.3
-set ::env(GLB_RT_LAYER_ADJUSTMENTS)     {0.99,0.3,0.3,0.3,0.3}  ;# default: 0.99 0 0 0 0
-set ::env(GLB_RT_ANT_LAYER_ADJUSTMENTS) {0.99,0.0,0.0,0.0,0.0}  ;# default: 0.99 0 0 0 0
-
-# set ::env(GLB_RT_ALLOW_CONGESTION) 1
 
 # You can draw more power domains if you need to 
 set ::env(VDD_NETS) [list {vccd1}]
@@ -91,6 +78,8 @@ set ::env(ROUTING_CORES) 8
 # set ::env(DRT_OPT_ITERS) 20
 
 set ::env(DIODE_INSERTION_STRATEGY)         3
+set ::env(GLB_RT_MAX_DIODE_INS_ITERS)       10
+set ::env(GLB_RT_ANT_ITERS)                 10
 
 # If you're going to use multiple power domains, then disable cvc run.
 set ::env(RUN_CVC) 1
