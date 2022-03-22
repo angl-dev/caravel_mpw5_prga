@@ -60,10 +60,10 @@ set ::env(VERILOG_FILES_BLACKBOX) "\
 	$script_dir/../../verilog/rtl/top.bb.v"
 
 set ::env(EXTRA_LEFS) "\
-	$script_dir/../../lef/top.lef"
+	$script_dir/../../lef/top_2600x2600.lef"
 
 set ::env(EXTRA_GDS_FILES) "\
-	$script_dir/../../gds/top.gds"
+	$script_dir/../../gds/top_2600x2600.gds"
 
 set ::env(GLB_RT_MAXLAYER) 5
 
