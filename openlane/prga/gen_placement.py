@@ -14,7 +14,7 @@ top_top_margin_mult     =  4
 top_bottom_margin_mult  =  4
 
 top_voffset =  16.32    # horizontal offset of vertical strips
-top_vpitch  = 153.60    # horizontal pitch of vertical strips
+top_vpitch  =  51.20    # horizontal pitch of vertical strips
                         # this is VDD-to-VDD, i.e. there's a GND at half top_vpitch
 top_vwidth  =   1.60    # width of the vertical strips
 top_vspace  =   1.70    # min spacing between any vertical PDN
@@ -27,8 +27,8 @@ top_hspace  =   1.70    # min spacing between any horizontal PDN
 vmult = 2.5
 
 # the goal is to place one CLB every (2*top_vpitch, vmult*top_hpitch)
-num_clb_x   = 8
-num_clb_y   = 8
+num_clb_x   = 9
+num_clb_y   = 9
 
 # Get PDN shapes in tile_clb
 def get_clb_pdn_met4 ():
@@ -115,5 +115,5 @@ if __name__ == '__main__':
         for x, y in product(range(num_clb_x), range(num_clb_y)):
             f.write ("i_tile_x{}y{} {:>4.2f} {:>4.2f} R0\n"
                     .format(x + 1, y + 1,
-                        macro_hoffset + x * top_vpitch * 2,
-                        macro_voffset + y * top_hpitch * vmult))
+                        macro_hoffset + x * top_vpitch * 5,
+                        macro_voffset + y * 302))
