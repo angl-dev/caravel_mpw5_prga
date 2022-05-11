@@ -50,8 +50,6 @@ OPENROAD_BIN=/home/angl/local/bin/openroad \
     -to routing
 popd
 
-exit
-
 # 5. hack Makefile again
 sed -i "/^OPENLANE_BASIC_COMMAND/c\OPENLANE_BASIC_COMMAND = \"cd \$(PWD)/../openlane && flow.tcl -design ./\$* -save_path .. -save -tag \$* -from eco\"" \
     caravel/openlane/Makefile
