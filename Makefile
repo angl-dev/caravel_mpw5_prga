@@ -188,7 +188,18 @@ run-precheck: check-pdk check-precheck
 	-u $(shell id -u $(USER)):$(shell id -g $(USER)) \
 	efabless/mpw_precheck:latest bash -c "cd $(PRECHECK_ROOT) ; python3 mpw_precheck.py --input_directory $(INPUT_DIRECTORY) --pdk_root $(PDK_ROOT)"
 
-
+.PHONY: custom-precheck
+custom-precheck: check-pdk check-precheck
+	$(eval INPUT_DIRECTORY := $(shell pwd))
+	cd $(PRECHECK_ROOT) && \
+	docker run -v $(PRECHECK_ROOT):$(PRECHECK_ROOT) \
+	-v $(INPUT_DIRECTORY):$(INPUT_DIRECTORY) \
+	-v $(PDK_ROOT):$(PDK_ROOT) \
+	-e INPUT_DIRECTORY=$(INPUT_DIRECTORY) \
+	-e PDK_ROOT=$(PDK_ROOT) \
+	-e PDKPATH=$(PDKPATH) \
+	-u $(shell id -u $(USER)):$(shell id -g $(USER)) \
+	efabless/mpw_precheck:latest bash -c "cd $(PRECHECK_ROOT) ; klayout -b -r ./checks/drc_checks/klayout/met_min_ca_density.lydrc -rd input=$(INPUT_DIRECTORY)/gds/top.gds -rd report=./klayout_met_min_ca_density_check.xml -rd feol=true"
 
 .PHONY: clean
 clean:
