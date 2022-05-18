@@ -81,5 +81,12 @@ set ::env(DIODE_INSERTION_STRATEGY)         3
 set ::env(GLB_RT_MAX_DIODE_INS_ITERS)       10
 set ::env(GLB_RT_ANT_ITERS)                 10
 
+set ::env(DECAP_CELL) "\
+    sky130_fd_sc_hd__decap_3 \
+    sky130_fd_sc_hd__decap_4 \
+    sky130_fd_sc_hd__decap_6 \
+    sky130_fd_sc_hd__decap_8 \
+    sky130_ef_sc_hd__decap_12"
+
 # If you're going to use multiple power domains, then disable cvc run.
 set ::env(RUN_CVC) 1

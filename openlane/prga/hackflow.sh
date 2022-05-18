@@ -16,6 +16,7 @@ trap cleanup EXIT
 pushd ${TAPEOUT_ROOT}/caravel
 
 # 2. hack caravel/openlane/Makefile
+git checkout caravel/openlane/Makefile
 sed -i "/^OPENLANE_BASIC_COMMAND/c\OPENLANE_BASIC_COMMAND = \"cd \$(PWD)/../openlane && flow.tcl -design ./\$* -save_path .. -save -tag \$* -overwrite -to cts\"" \
     caravel/openlane/Makefile
 
