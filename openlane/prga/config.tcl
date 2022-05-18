@@ -46,13 +46,36 @@ set ::env(CLOCK_PERIOD) "1500"
 
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 2600 3200"
+set ::env(FP_CORE_UTIL) 40
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
+set ::env(FP_TAP_HORIZONTAL_HALO) 5
+set ::env(FP_PDN_HORIZONTAL_HALO) 5
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
 
-set ::env(PL_TARGET_DENSITY)            0.125
-set ::env(PL_RESIZER_MAX_WIRE_LENGTH)   250
-set ::env(CTS_CLK_MAX_WIRE_LENGTH)      250
+# PDN Pitch decreased from 153.6 -> 51.2 which is 153.6 / 3
+set ::env(FP_PDN_VPITCH) 51.2
+
+# Density increased from 0.135 to 0.180 per OpenLANE's recommendation
+set ::env(PL_TARGET_DENSITY)            0.180
+
+# Decreased from 250 to 115 to increase slack to avoid min hold violations
+# Under 115 does not work -> fails at global routing
+set ::env(PL_RESIZER_MAX_WIRE_LENGTH)   115
+# Timing Closure doc suggested to increase max buffer percentage and decrease
+# core flow util but over this percentage and lower core flow util does not
+# help increasing slack
+set ::env(PL_RESIZER_HOLD_MAX_BUFFER_PERCENT) 85
+set ::env(GLB_RESIZER_HOLD_MAX_BUFFER_PERCENT) 85
+
+# Timing Closure doc suggested to increase margin if there is 
+# timing violations at the DRC stage
+# Currently being tested to see if it actually helps
+set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.3
+set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.3
+
+# Increased to 350 and it is verified to help slack but DOES NOT HELP OVER THIS
+set ::env(CTS_CLK_MAX_WIRE_LENGTH)      350
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
@@ -81,12 +104,12 @@ set ::env(DIODE_INSERTION_STRATEGY)         3
 set ::env(GLB_RT_MAX_DIODE_INS_ITERS)       10
 set ::env(GLB_RT_ANT_ITERS)                 10
 
-set ::env(DECAP_CELL) "\
-    sky130_fd_sc_hd__decap_3 \
-    sky130_fd_sc_hd__decap_4 \
-    sky130_fd_sc_hd__decap_6 \
-    sky130_fd_sc_hd__decap_8 \
-    sky130_ef_sc_hd__decap_12"
+# set ::env(DECAP_CELL) "\
+#     sky130_fd_sc_hd__decap_3 \
+#     sky130_fd_sc_hd__decap_4 \
+#     sky130_fd_sc_hd__decap_6 \
+#     sky130_fd_sc_hd__decap_8 \
+#     sky130_ef_sc_hd__decap_12"
 
 # If you're going to use multiple power domains, then disable cvc run.
 set ::env(RUN_CVC) 1

@@ -38,24 +38,32 @@ set ::env(CLOCK_PERIOD) "1000"
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 165.60 217.60"
 
+set ::env(FP_CORE_UTIL) 42
+
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(FP_IO_HLAYER) met1
 set ::env(FP_IO_VLAYER) met2
 
 set ::env(BOTTOM_MARGIN_MULT) 2
 set ::env(TOP_MARGIN_MULT)    2
-set ::env(LEFT_MARGIN_MULT)   12
+# Can go down to mult = 9 but increased back to 12 (default) to minimize min hold violations
+# If needed, it can go down back to 9 since it does not help much with hold violations
+set ::env(LEFT_MARGIN_MULT)   12 
 set ::env(RIGHT_MARGIN_MULT)  12
 
 set ::env(PDN_CFG) $script_dir/pdn_cfg.tcl
 
 # set ::env(PL_BASIC_PLACEMENT) 1
 set ::env(PL_TARGET_DENSITY) 0.57
+set ::env(PL_RESIZER_HOLD_MAX_BUFFER_PERCENT) 80
 
+
+set ::env(CTS_CLK_MAX_WIRE_LENGTH) 140
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
 # where the PDN is planned on metal 5. So, to avoid having shorts between routes
 # in this macro and the top level metal 5 stripes, we have to restrict routes to metal4.  
+set ::env(GLB_RESIZER_HOLD_MAX_BUFFER_PERCENT) 80
 set ::env(RT_MIN_LAYER) met1
 set ::env(RT_MAX_LAYER) met2
 set ::env(DRT_MIN_LAYER) li1
