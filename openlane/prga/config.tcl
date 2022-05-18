@@ -50,9 +50,16 @@ set ::env(DIE_AREA) "0 0 2600 3200"
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
 
-set ::env(PL_TARGET_DENSITY)            0.125
-set ::env(PL_RESIZER_MAX_WIRE_LENGTH)   250
-set ::env(CTS_CLK_MAX_WIRE_LENGTH)      250
+set ::env(PL_TARGET_DENSITY)                0.125
+set ::env(PL_RESIZER_HOLD_SLACK_MARGIN)     0.25
+set ::env(PL_RESIZER_MAX_CAP_MARGIN)        50
+set ::env(PL_RESIZER_MAX_SLEW_MARGIN)       50
+set ::env(PL_RESIZER_MAX_WIRE_LENGTH)       250
+set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN)    0.15
+set ::env(GLB_RESIZER_MAX_CAP_MARGIN)       20
+set ::env(GLB_RESIZER_MAX_SLEW_MARGIN)      20
+set ::env(GLB_RESIZER_MAX_WIRE_LENGTH)      250
+set ::env(CTS_CLK_MAX_WIRE_LENGTH)          250
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
