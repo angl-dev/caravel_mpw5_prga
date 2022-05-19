@@ -41,7 +41,7 @@ set ::env(VERILOG_FILES) "\
 set ::env(CLOCK_PORT) "user_clock2"
 set ::env(CLOCK_NET) "top.prog_clk top.ipin_x0y1_0"
 
-set ::env(CLOCK_PERIOD) "1100"
+set ::env(CLOCK_PERIOD) "1000"
 
 #set ::env(FP_SIZING) absolute
 #set ::env(DIE_AREA) "0 0 2920 3520"
@@ -75,6 +75,8 @@ set ::env(FP_PDN_CHECK_NODES) 0
 # The following is because there are no std cells in the example wrapper project.
 set ::env(SYNTH_TOP_LEVEL) 1
 set ::env(PL_RANDOM_GLB_PLACEMENT) 1
+
+set ::env(GLB_RESIZER_MAX_SLEW_MARGIN)      20
 
 set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
 set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
