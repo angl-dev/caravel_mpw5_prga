@@ -26,13 +26,8 @@ module prga_tb;
 
 	wire gpio;
 	wire [37:0] mprj_io;
-	wire [7:0] mprj_io_0;
-
-	assign mprj_io_0 = mprj_io[7:0];
-	// assign mprj_io_0 = {mprj_io[8:4],mprj_io[2:0]};
 
 	assign mprj_io[3] = (CSB == 1'b1) ? 1'b1 : 1'bz;
-	// assign mprj_io[3] = 1'b1;
 
 	// External clock is used by default.  Make this artificially fast for the
 	// simulation.  Normally this would be a slow clock and the digital PLL
@@ -49,10 +44,11 @@ module prga_tb;
 		$dumpvars(0, prga_tb);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (25) begin
+		repeat (100) begin
 			repeat (1000) @(posedge clock);
 			// $display("+1000 cycles");
 		end
+
 		$display("%c[1;31m",27);
 		`ifdef GL
 			$display ("Monitor: Timeout, Test Mega-Project IO Ports (GL) Failed");
@@ -64,54 +60,27 @@ module prga_tb;
 	end
 
 	initial begin
-	    // Observe Output pins [7:0]
-		wait(mprj_io_0 == 8'h01);
-		wait(mprj_io_0 == 8'h02);
-		wait(mprj_io_0 == 8'h03);
-		wait(mprj_io_0 == 8'h04);
-		wait(mprj_io_0 == 8'h05);
-		wait(mprj_io_0 == 8'h06);
-		wait(mprj_io_0 == 8'h07);
-		wait(mprj_io_0 == 8'h08);
-		wait(mprj_io_0 == 8'h09);
-		wait(mprj_io_0 == 8'h0A);   
-		wait(mprj_io_0 == 8'hFF);
-		wait(mprj_io_0 == 8'h00);
-		
-		`ifdef GL
-	    	$display("Monitor: Test 1 Mega-Project IO (GL) Passed");
-		`else
-		    $display("Monitor: Test 1 Mega-Project IO (RTL) Passed");
-		`endif
-	    $finish;
-	end
-
-	initial begin
-		RSTB <= 1'b0;
-		CSB  <= 1'b1;		// Force CSB high
+		RSTB = 1'b0;
+		CSB  = 1'b1;		// Force CSB high
 		#2000;
-		RSTB <= 1'b1;	    	// Release reset
+		RSTB = 1'b1;	    	// Release reset
 		#300000;
 		CSB = 1'b0;		// CSB can be released
 	end
 
 	initial begin		// Power-up sequence
-		power1 <= 1'b0;
-		power2 <= 1'b0;
-		power3 <= 1'b0;
-		power4 <= 1'b0;
+		power1 = 1'b0;
+		power2 = 1'b0;
+		power3 = 1'b0;
+		power4 = 1'b0;
 		#100;
-		power1 <= 1'b1;
+		power1 = 1'b1;
 		#100;
-		power2 <= 1'b1;
+		power2 = 1'b1;
 		#100;
-		power3 <= 1'b1;
+		power3 = 1'b1;
 		#100;
-		power4 <= 1'b1;
-	end
-
-	always @(mprj_io) begin
-		#1 $display("MPRJ-IO state = %b ", mprj_io[7:0]);
+		power4 = 1'b1;
 	end
 
 	wire flash_csb;
@@ -166,6 +135,102 @@ module prga_tb;
 		.io2(),			// not used
 		.io3()			// not used
 	);
+
+    // -----------------------------------------------------------------------
+    // -- PRGA Testing -------------------------------------------------------
+    // -----------------------------------------------------------------------
+    wire f_tb_rst;
+    assign f_tb_rst = CSB || !gpio;
+
+    wire w_tb_pass, w_tb_fail, w_tb_prog_done;
+    assign w_tb_prog_done = 1'b1;
+
+    // Logging
+    wire [31:0] f_tb_verbosity;
+    reg [31:0] f_tb_cycle_cnt;
+
+    assign f_tb_verbosity = 1;
+
+    always @(posedge clock) begin
+        if (f_tb_rst) begin
+            f_tb_cycle_cnt <= 0;
+        end else begin
+            f_tb_cycle_cnt <= f_tb_cycle_cnt + 1;
+
+            if (w_tb_fail) begin
+                $display();
+                $display("[INFO] ++=========================++");
+                $display("[INFO] ||       TEST FAILED       ||");
+                $display("[INFO] ++=========================++");
+                $display();
+                $finish;
+            end else if (w_tb_pass) begin
+                $display();
+                $display("[INFO] ++=========================++");
+                $display("[INFO] ||       TEST PASSED       ||");
+                $display("[INFO] ++=========================++");
+                $display();
+                $finish;
+            end
+        end
+    end
+
+    // -- Test ---------------------------------------------------------------
+    // Signals
+    wire w_test_clk;
+    wire w_test_reset;
+    wire w_test_start;
+    wire [3:0] w_test_bcd1;
+    wire [3:0] w_test_bcd0;
+    wire w_test_ready;
+    wire w_test_done_tick;
+    wire [6:0] w_test_bin;
+
+    // Tester
+    basic i_tester (
+        .tb_clk(clock)
+        ,.tb_rst(f_tb_rst)
+        ,.tb_pass(w_tb_pass)
+        ,.tb_fail(w_tb_fail)
+        ,.tb_prog_done(w_tb_prog_done)
+        ,.tb_verbosity(f_tb_verbosity)
+        ,.tb_cycle_cnt(f_tb_cycle_cnt)
+        ,.clk(w_test_clk)
+        ,.reset(w_test_reset)
+        ,.start(w_test_start)
+        ,.bcd1(w_test_bcd1)
+        ,.bcd0(w_test_bcd0)
+        ,.ready(w_test_ready)
+        ,.done_tick(w_test_done_tick)
+        ,.bin(w_test_bin)
+        );
+
+    // -- Behavioral Model ---------------------------------------------------
+    // Signals
+    wire w_behav_ready;
+    wire w_behav_done_tick;
+    wire [6:0] w_behav_bin;
+
+    // DUT
+    bcd2bin i_behav (
+        .clk(w_test_clk)
+        ,.reset(w_test_reset)
+        ,.start(w_test_start)
+        ,.bcd1(w_test_bcd1)
+        ,.bcd0(w_test_bcd0)
+        ,.ready(w_behav_ready)
+        ,.done_tick(w_behav_done_tick)
+        ,.bin(w_behav_bin)
+        );
+
+    // -- Bitstream Loading --------------------------------------------------
+
+    // -----------------------------------------------------------------------
+    // -- Wiring -------------------------------------------------------------
+    // -----------------------------------------------------------------------
+    assign w_test_ready = w_behav_ready;
+    assign w_test_done_tick = w_behav_done_tick;
+    assign w_test_bin = w_behav_bin;
 
 endmodule
 `default_nettype wire
