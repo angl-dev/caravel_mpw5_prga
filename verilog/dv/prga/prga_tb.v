@@ -143,7 +143,6 @@ module prga_tb;
     assign f_tb_rst = CSB || !gpio;
 
     wire w_tb_pass, w_tb_fail, w_tb_prog_done;
-    assign w_tb_prog_done = 1'b1;
 
     // Logging
     wire [31:0] f_tb_verbosity;
@@ -224,13 +223,61 @@ module prga_tb;
         );
 
     // -- Bitstream Loading --------------------------------------------------
+    wire prog_clk, prog_rst, prog_done, prog_we, prog_din, prog_dout, prog_we_o;
+
+    prga_bitstream_loader i_loader (
+        .tb_clk(clock)
+        ,.tb_rst(f_tb_rst)
+        ,.tb_cycle_cnt(f_tb_cycle_cnt)
+        ,.tb_prog_done(w_tb_prog_done)
+        ,.prog_clk(prog_clk)
+        ,.prog_rst(prog_rst)
+        ,.prog_done(prog_done)
+        ,.prog_we(prog_we)
+        ,.prog_din(prog_din)
+        ,.prog_dout(prog_dout)
+        ,.prog_we_o(prog_we_o)
+        );
+
+    // -- Implemented Circuit ------------------------------------------------
+    // Signals
+    wire w_impl_ready;
+    wire w_impl_done_tick;
+    wire [6:0] w_impl_bin;
 
     // -----------------------------------------------------------------------
     // -- Wiring -------------------------------------------------------------
     // -----------------------------------------------------------------------
-    assign w_test_ready = w_behav_ready;
-    assign w_test_done_tick = w_behav_done_tick;
-    assign w_test_bin = w_behav_bin;
+    assign w_test_ready = w_impl_ready;
+    assign w_test_done_tick = w_impl_done_tick;
+    assign w_test_bin = w_impl_bin;
+
+    assign mprj_io[37] = prog_clk;
+    assign mprj_io[36] = w_test_clk;
+    assign mprj_io[35] = prog_din;
+    assign mprj_io[34] = prog_done;
+    assign mprj_io[33] = prog_rst;
+    assign mprj_io[32] = prog_we;
+    assign mprj_io[31] = 1'b0;
+    assign mprj_io[30] = w_test_reset;
+    assign mprj_io[29] = w_test_start;
+    assign mprj_io[28] = w_test_bcd1[0];
+    assign mprj_io[27] = w_test_bcd1[1];
+    assign mprj_io[26] = w_test_bcd1[2];
+    assign mprj_io[25] = w_test_bcd1[3];
+    assign mprj_io[24] = w_test_bcd0[0];
+    assign mprj_io[23] = w_test_bcd0[1];
+    assign mprj_io[22] = w_test_bcd0[2];
+    assign mprj_io[21] = w_test_bcd0[3];
+    assign w_impl_ready = mprj_io[20];
+    assign w_impl_done_tick = mprj_io[19];
+    assign w_impl_bin[0] = mprj_io[18];
+    assign w_impl_bin[1] = mprj_io[17];
+    assign w_impl_bin[2] = mprj_io[16];
+    assign w_impl_bin[3] = mprj_io[14];
+    assign w_impl_bin[4] = mprj_io[13];
+    assign w_impl_bin[5] = mprj_io[12];
+    assign w_impl_bin[6] = mprj_io[11];
 
 endmodule
 `default_nettype wire
