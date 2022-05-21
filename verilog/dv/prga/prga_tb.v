@@ -68,7 +68,8 @@ module prga_tb;
 		RSTB = 1'b1;	    	// Release reset
 		#300000;
 		CSB = 1'b0;		// CSB can be released
-        #10000;
+
+        wait (gpio === 1'b1);
         f_tb_rst = 1'b0;
 	end
 
@@ -270,14 +271,16 @@ module prga_tb;
     assign mprj_io[23] = w_test_bcd0[1];
     assign mprj_io[22] = w_test_bcd0[2];
     assign mprj_io[21] = w_test_bcd0[3];
+    assign prog_dout = mprj_io[1];
+    assign prog_we_o = mprj_io[0];
     assign w_impl_ready = mprj_io[20];
     assign w_impl_done_tick = mprj_io[19];
     assign w_impl_bin[0] = mprj_io[18];
     assign w_impl_bin[1] = mprj_io[17];
     assign w_impl_bin[2] = mprj_io[16];
     assign w_impl_bin[3] = mprj_io[14];
-    assign w_impl_bin[4] = mprj_io[13];
-    assign w_impl_bin[5] = mprj_io[12];
+    assign w_impl_bin[4] = mprj_io[12];
+    assign w_impl_bin[5] = mprj_io[13];
     assign w_impl_bin[6] = mprj_io[11];
 
 endmodule
