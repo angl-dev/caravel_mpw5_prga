@@ -23,6 +23,7 @@ module prga_tb;
 	reg CSB;
 	reg power1, power2;
 	reg power3, power4;
+    reg f_tb_rst;
 
 	wire gpio;
 	wire [37:0] mprj_io;
@@ -62,10 +63,13 @@ module prga_tb;
 	initial begin
 		RSTB = 1'b0;
 		CSB  = 1'b1;		// Force CSB high
+        f_tb_rst = 1'b1;
 		#2000;
 		RSTB = 1'b1;	    	// Release reset
 		#300000;
 		CSB = 1'b0;		// CSB can be released
+        #10000;
+        f_tb_rst = 1'b0;
 	end
 
 	initial begin		// Power-up sequence
@@ -139,9 +143,6 @@ module prga_tb;
     // -----------------------------------------------------------------------
     // -- PRGA Testing -------------------------------------------------------
     // -----------------------------------------------------------------------
-    wire f_tb_rst;
-    assign f_tb_rst = CSB || !gpio;
-
     wire w_tb_pass, w_tb_fail, w_tb_prog_done;
 
     // Logging
