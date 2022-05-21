@@ -102,9 +102,9 @@ void main()
     reg_mprj_io_31 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
     reg_mprj_io_32 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
     reg_mprj_io_33 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_32 = GPIO_MODE_USER_STD_INPUT_PULLDOWN; // prog_we
-    reg_mprj_io_33 = GPIO_MODE_USER_STD_INPUT_PULLDOWN; // prog_rst
-    reg_mprj_io_34 = GPIO_MODE_USER_STD_INPUT_PULLDOWN; // prog_done
+    reg_mprj_io_32 = GPIO_MODE_USER_STD_INPUT_NOPULL;   // prog_we
+    reg_mprj_io_33 = GPIO_MODE_USER_STD_INPUT_NOPULL;   // prog_rst
+    reg_mprj_io_34 = GPIO_MODE_USER_STD_INPUT_NOPULL;   // prog_done
     reg_mprj_io_35 = GPIO_MODE_USER_STD_INPUT_NOPULL;   // prog_din
     reg_mprj_io_36 = GPIO_MODE_USER_STD_INPUT_NOPULL;   // clk
     reg_mprj_io_37 = GPIO_MODE_USER_STD_INPUT_NOPULL;   // prog_clk
