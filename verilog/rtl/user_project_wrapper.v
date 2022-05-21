@@ -221,8 +221,6 @@ module user_project_wrapper #(
 /* Do not change below */
 /*---------------------*/
 `ifdef MPRJ_IO_37_IO
-    wire oe_37;
-    assign io_oeb[37] = ~oe_37;
 `else /* `ifdef MPRJ_IO_37_IO */
 `ifdef MPRJ_IO_37_I
     assign io_out[37] = 1'b0;
@@ -233,8 +231,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_37_IO */
     
 `ifdef MPRJ_IO_36_IO
-    wire oe_36;
-    assign io_oeb[36] = ~oe_36;
 `else /* `ifdef MPRJ_IO_36_IO */
 `ifdef MPRJ_IO_36_I
     assign io_out[36] = 1'b0;
@@ -245,8 +241,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_36_IO */
     
 `ifdef MPRJ_IO_35_IO
-    wire oe_35;
-    assign io_oeb[35] = ~oe_35;
 `else /* `ifdef MPRJ_IO_35_IO */
 `ifdef MPRJ_IO_35_I
     assign io_out[35] = 1'b0;
@@ -257,8 +251,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_35_IO */
     
 `ifdef MPRJ_IO_34_IO
-    wire oe_34;
-    assign io_oeb[34] = ~oe_34;
 `else /* `ifdef MPRJ_IO_34_IO */
 `ifdef MPRJ_IO_34_I
     assign io_out[34] = 1'b0;
@@ -269,8 +261,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_34_IO */
     
 `ifdef MPRJ_IO_33_IO
-    wire oe_33;
-    assign io_oeb[33] = ~oe_33;
 `else /* `ifdef MPRJ_IO_33_IO */
 `ifdef MPRJ_IO_33_I
     assign io_out[33] = 1'b0;
@@ -281,8 +271,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_33_IO */
     
 `ifdef MPRJ_IO_32_IO
-    wire oe_32;
-    assign io_oeb[32] = ~oe_32;
 `else /* `ifdef MPRJ_IO_32_IO */
 `ifdef MPRJ_IO_32_I
     assign io_out[32] = 1'b0;
@@ -293,8 +281,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_32_IO */
     
 `ifdef MPRJ_IO_31_IO
-    wire oe_31;
-    assign io_oeb[31] = ~oe_31;
 `else /* `ifdef MPRJ_IO_31_IO */
 `ifdef MPRJ_IO_31_I
     assign io_out[31] = 1'b0;
@@ -305,8 +291,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_31_IO */
     
 `ifdef MPRJ_IO_30_IO
-    wire oe_30;
-    assign io_oeb[30] = ~oe_30;
 `else /* `ifdef MPRJ_IO_30_IO */
 `ifdef MPRJ_IO_30_I
     assign io_out[30] = 1'b0;
@@ -317,8 +301,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_30_IO */
     
 `ifdef MPRJ_IO_29_IO
-    wire oe_29;
-    assign io_oeb[29] = ~oe_29;
 `else /* `ifdef MPRJ_IO_29_IO */
 `ifdef MPRJ_IO_29_I
     assign io_out[29] = 1'b0;
@@ -329,8 +311,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_29_IO */
     
 `ifdef MPRJ_IO_28_IO
-    wire oe_28;
-    assign io_oeb[28] = ~oe_28;
 `else /* `ifdef MPRJ_IO_28_IO */
 `ifdef MPRJ_IO_28_I
     assign io_out[28] = 1'b0;
@@ -341,8 +321,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_28_IO */
     
 `ifdef MPRJ_IO_27_IO
-    wire oe_27;
-    assign io_oeb[27] = ~oe_27;
 `else /* `ifdef MPRJ_IO_27_IO */
 `ifdef MPRJ_IO_27_I
     assign io_out[27] = 1'b0;
@@ -353,8 +331,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_27_IO */
     
 `ifdef MPRJ_IO_26_IO
-    wire oe_26;
-    assign io_oeb[26] = ~oe_26;
 `else /* `ifdef MPRJ_IO_26_IO */
 `ifdef MPRJ_IO_26_I
     assign io_out[26] = 1'b0;
@@ -365,8 +341,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_26_IO */
     
 `ifdef MPRJ_IO_25_IO
-    wire oe_25;
-    assign io_oeb[25] = ~oe_25;
 `else /* `ifdef MPRJ_IO_25_IO */
 `ifdef MPRJ_IO_25_I
     assign io_out[25] = 1'b0;
@@ -377,8 +351,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_25_IO */
     
 `ifdef MPRJ_IO_24_IO
-    wire oe_24;
-    assign io_oeb[24] = ~oe_24;
 `else /* `ifdef MPRJ_IO_24_IO */
 `ifdef MPRJ_IO_24_I
     assign io_out[24] = 1'b0;
@@ -389,8 +361,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_24_IO */
     
 `ifdef MPRJ_IO_23_IO
-    wire oe_23;
-    assign io_oeb[23] = ~oe_23;
 `else /* `ifdef MPRJ_IO_23_IO */
 `ifdef MPRJ_IO_23_I
     assign io_out[23] = 1'b0;
@@ -401,8 +371,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_23_IO */
     
 `ifdef MPRJ_IO_22_IO
-    wire oe_22;
-    assign io_oeb[22] = ~oe_22;
 `else /* `ifdef MPRJ_IO_22_IO */
 `ifdef MPRJ_IO_22_I
     assign io_out[22] = 1'b0;
@@ -413,8 +381,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_22_IO */
     
 `ifdef MPRJ_IO_21_IO
-    wire oe_21;
-    assign io_oeb[21] = ~oe_21;
 `else /* `ifdef MPRJ_IO_21_IO */
 `ifdef MPRJ_IO_21_I
     assign io_out[21] = 1'b0;
@@ -425,8 +391,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_21_IO */
     
 `ifdef MPRJ_IO_20_IO
-    wire oe_20;
-    assign io_oeb[20] = ~oe_20;
 `else /* `ifdef MPRJ_IO_20_IO */
 `ifdef MPRJ_IO_20_I
     assign io_out[20] = 1'b0;
@@ -437,8 +401,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_20_IO */
     
 `ifdef MPRJ_IO_19_IO
-    wire oe_19;
-    assign io_oeb[19] = ~oe_19;
 `else /* `ifdef MPRJ_IO_19_IO */
 `ifdef MPRJ_IO_19_I
     assign io_out[19] = 1'b0;
@@ -449,8 +411,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_19_IO */
     
 `ifdef MPRJ_IO_18_IO
-    wire oe_18;
-    assign io_oeb[18] = ~oe_18;
 `else /* `ifdef MPRJ_IO_18_IO */
 `ifdef MPRJ_IO_18_I
     assign io_out[18] = 1'b0;
@@ -461,8 +421,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_18_IO */
     
 `ifdef MPRJ_IO_17_IO
-    wire oe_17;
-    assign io_oeb[17] = ~oe_17;
 `else /* `ifdef MPRJ_IO_17_IO */
 `ifdef MPRJ_IO_17_I
     assign io_out[17] = 1'b0;
@@ -473,8 +431,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_17_IO */
     
 `ifdef MPRJ_IO_16_IO
-    wire oe_16;
-    assign io_oeb[16] = ~oe_16;
 `else /* `ifdef MPRJ_IO_16_IO */
 `ifdef MPRJ_IO_16_I
     assign io_out[16] = 1'b0;
@@ -485,8 +441,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_16_IO */
     
 `ifdef MPRJ_IO_15_IO
-    wire oe_15;
-    assign io_oeb[15] = ~oe_15;
 `else /* `ifdef MPRJ_IO_15_IO */
 `ifdef MPRJ_IO_15_I
     assign io_out[15] = 1'b0;
@@ -497,8 +451,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_15_IO */
     
 `ifdef MPRJ_IO_14_IO
-    wire oe_14;
-    assign io_oeb[14] = ~oe_14;
 `else /* `ifdef MPRJ_IO_14_IO */
 `ifdef MPRJ_IO_14_I
     assign io_out[14] = 1'b0;
@@ -509,8 +461,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_14_IO */
     
 `ifdef MPRJ_IO_13_IO
-    wire oe_13;
-    assign io_oeb[13] = ~oe_13;
 `else /* `ifdef MPRJ_IO_13_IO */
 `ifdef MPRJ_IO_13_I
     assign io_out[13] = 1'b0;
@@ -521,8 +471,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_13_IO */
     
 `ifdef MPRJ_IO_12_IO
-    wire oe_12;
-    assign io_oeb[12] = ~oe_12;
 `else /* `ifdef MPRJ_IO_12_IO */
 `ifdef MPRJ_IO_12_I
     assign io_out[12] = 1'b0;
@@ -533,8 +481,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_12_IO */
     
 `ifdef MPRJ_IO_11_IO
-    wire oe_11;
-    assign io_oeb[11] = ~oe_11;
 `else /* `ifdef MPRJ_IO_11_IO */
 `ifdef MPRJ_IO_11_I
     assign io_out[11] = 1'b0;
@@ -545,8 +491,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_11_IO */
     
 `ifdef MPRJ_IO_10_IO
-    wire oe_10;
-    assign io_oeb[10] = ~oe_10;
 `else /* `ifdef MPRJ_IO_10_IO */
 `ifdef MPRJ_IO_10_I
     assign io_out[10] = 1'b0;
@@ -557,8 +501,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_10_IO */
     
 `ifdef MPRJ_IO_9_IO
-    wire oe_9;
-    assign io_oeb[9] = ~oe_9;
 `else /* `ifdef MPRJ_IO_9_IO */
 `ifdef MPRJ_IO_9_I
     assign io_out[9] = 1'b0;
@@ -569,8 +511,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_9_IO */
     
 `ifdef MPRJ_IO_8_IO
-    wire oe_8;
-    assign io_oeb[8] = ~oe_8;
 `else /* `ifdef MPRJ_IO_8_IO */
 `ifdef MPRJ_IO_8_I
     assign io_out[8] = 1'b0;
@@ -581,8 +521,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_8_IO */
     
 `ifdef MPRJ_IO_7_IO
-    wire oe_7;
-    assign io_oeb[7] = ~oe_7;
 `else /* `ifdef MPRJ_IO_7_IO */
 `ifdef MPRJ_IO_7_I
     assign io_out[7] = 1'b0;
@@ -593,8 +531,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_7_IO */
     
 `ifdef MPRJ_IO_6_IO
-    wire oe_6;
-    assign io_oeb[6] = ~oe_6;
 `else /* `ifdef MPRJ_IO_6_IO */
 `ifdef MPRJ_IO_6_I
     assign io_out[6] = 1'b0;
@@ -605,8 +541,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_6_IO */
     
 `ifdef MPRJ_IO_5_IO
-    wire oe_5;
-    assign io_oeb[5] = ~oe_5;
 `else /* `ifdef MPRJ_IO_5_IO */
 `ifdef MPRJ_IO_5_I
     assign io_out[5] = 1'b0;
@@ -617,8 +551,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_5_IO */
     
 `ifdef MPRJ_IO_4_IO
-    wire oe_4;
-    assign io_oeb[4] = ~oe_4;
 `else /* `ifdef MPRJ_IO_4_IO */
 `ifdef MPRJ_IO_4_I
     assign io_out[4] = 1'b0;
@@ -629,8 +561,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_4_IO */
     
 `ifdef MPRJ_IO_3_IO
-    wire oe_3;
-    assign io_oeb[3] = ~oe_3;
 `else /* `ifdef MPRJ_IO_3_IO */
 `ifdef MPRJ_IO_3_I
     assign io_out[3] = 1'b0;
@@ -641,8 +571,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_3_IO */
     
 `ifdef MPRJ_IO_2_IO
-    wire oe_2;
-    assign io_oeb[2] = ~oe_2;
 `else /* `ifdef MPRJ_IO_2_IO */
 `ifdef MPRJ_IO_2_I
     assign io_out[2] = 1'b0;
@@ -653,8 +581,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_2_IO */
     
 `ifdef MPRJ_IO_1_IO
-    wire oe_1;
-    assign io_oeb[1] = ~oe_1;
 `else /* `ifdef MPRJ_IO_1_IO */
 `ifdef MPRJ_IO_1_I
     assign io_out[1] = 1'b0;
@@ -665,8 +591,6 @@ module user_project_wrapper #(
 `endif /* `ifdef MPRJ_IO_1_IO */
     
 `ifdef MPRJ_IO_0_IO
-    wire oe_0;
-    assign io_oeb[0] = ~oe_0;
 `else /* `ifdef MPRJ_IO_0_IO */
 `ifdef MPRJ_IO_0_I
     assign io_out[0] = 1'b0;
@@ -680,17 +604,18 @@ module user_project_wrapper #(
    // FPGA instance   
 `define IPIN(x) ipin_``x``
 `define OPIN(x) opin_``x``
-`define OE(x)     oe_``x``
+`define OEB(x)   oeb_``x``
    
    top dut (
 `ifdef USE_POWER_PINS
 	    .vccd1(vccd1),	// User area 1 1.8V power
 	    .vssd1(vssd1),	// User area 1 digital ground
 `endif
+
 `ifdef MPRJ_IO_37_IO
          .`IPIN(`MPRJ_IO_37_CONN) ( io_in[37])
         ,.`OPIN(`MPRJ_IO_37_CONN) (io_out[37])
-        ,  .`OE(`MPRJ_IO_37_CONN) (oe_37)
+        , .`OEB(`MPRJ_IO_37_CONN) (io_oeb[37])
 `else /* `ifdef MPRJ_IO_37_IO */
 `ifdef MPRJ_IO_37_I
          .`MPRJ_IO_37_CONN ( io_in[37])
@@ -702,7 +627,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_36_IO
         ,.`IPIN(`MPRJ_IO_36_CONN) ( io_in[36])
         ,.`OPIN(`MPRJ_IO_36_CONN) (io_out[36])
-        ,  .`OE(`MPRJ_IO_36_CONN) (oe_36)
+        , .`OEB(`MPRJ_IO_36_CONN) (io_oeb[36])
 `else /* `ifdef MPRJ_IO_36_IO */
 `ifdef MPRJ_IO_36_I
         ,.`MPRJ_IO_36_CONN ( io_in[36])
@@ -714,7 +639,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_35_IO
         ,.`IPIN(`MPRJ_IO_35_CONN) ( io_in[35])
         ,.`OPIN(`MPRJ_IO_35_CONN) (io_out[35])
-        ,  .`OE(`MPRJ_IO_35_CONN) (oe_35)
+        , .`OEB(`MPRJ_IO_35_CONN) (io_oeb[35])
 `else /* `ifdef MPRJ_IO_35_IO */
 `ifdef MPRJ_IO_35_I
         ,.`MPRJ_IO_35_CONN ( io_in[35])
@@ -726,7 +651,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_34_IO
         ,.`IPIN(`MPRJ_IO_34_CONN) ( io_in[34])
         ,.`OPIN(`MPRJ_IO_34_CONN) (io_out[34])
-        ,  .`OE(`MPRJ_IO_34_CONN) (oe_34)
+        , .`OEB(`MPRJ_IO_34_CONN) (io_oeb[34])
 `else /* `ifdef MPRJ_IO_34_IO */
 `ifdef MPRJ_IO_34_I
         ,.`MPRJ_IO_34_CONN ( io_in[34])
@@ -738,7 +663,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_33_IO
         ,.`IPIN(`MPRJ_IO_33_CONN) ( io_in[33])
         ,.`OPIN(`MPRJ_IO_33_CONN) (io_out[33])
-        ,  .`OE(`MPRJ_IO_33_CONN) (oe_33)
+        , .`OEB(`MPRJ_IO_33_CONN) (io_oeb[33])
 `else /* `ifdef MPRJ_IO_33_IO */
 `ifdef MPRJ_IO_33_I
         ,.`MPRJ_IO_33_CONN ( io_in[33])
@@ -750,7 +675,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_32_IO
         ,.`IPIN(`MPRJ_IO_32_CONN) ( io_in[32])
         ,.`OPIN(`MPRJ_IO_32_CONN) (io_out[32])
-        ,  .`OE(`MPRJ_IO_32_CONN) (oe_32)
+        , .`OEB(`MPRJ_IO_32_CONN) (io_oeb[32])
 `else /* `ifdef MPRJ_IO_32_IO */
 `ifdef MPRJ_IO_32_I
         ,.`MPRJ_IO_32_CONN ( io_in[32])
@@ -762,7 +687,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_31_IO
         ,.`IPIN(`MPRJ_IO_31_CONN) ( io_in[31])
         ,.`OPIN(`MPRJ_IO_31_CONN) (io_out[31])
-        ,  .`OE(`MPRJ_IO_31_CONN) (oe_31)
+        , .`OEB(`MPRJ_IO_31_CONN) (io_oeb[31])
 `else /* `ifdef MPRJ_IO_31_IO */
 `ifdef MPRJ_IO_31_I
         ,.`MPRJ_IO_31_CONN ( io_in[31])
@@ -774,7 +699,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_30_IO
         ,.`IPIN(`MPRJ_IO_30_CONN) ( io_in[30])
         ,.`OPIN(`MPRJ_IO_30_CONN) (io_out[30])
-        ,  .`OE(`MPRJ_IO_30_CONN) (oe_30)
+        , .`OEB(`MPRJ_IO_30_CONN) (io_oeb[30])
 `else /* `ifdef MPRJ_IO_30_IO */
 `ifdef MPRJ_IO_30_I
         ,.`MPRJ_IO_30_CONN ( io_in[30])
@@ -786,7 +711,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_29_IO
         ,.`IPIN(`MPRJ_IO_29_CONN) ( io_in[29])
         ,.`OPIN(`MPRJ_IO_29_CONN) (io_out[29])
-        ,  .`OE(`MPRJ_IO_29_CONN) (oe_29)
+        , .`OEB(`MPRJ_IO_29_CONN) (io_oeb[29])
 `else /* `ifdef MPRJ_IO_29_IO */
 `ifdef MPRJ_IO_29_I
         ,.`MPRJ_IO_29_CONN ( io_in[29])
@@ -798,7 +723,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_28_IO
         ,.`IPIN(`MPRJ_IO_28_CONN) ( io_in[28])
         ,.`OPIN(`MPRJ_IO_28_CONN) (io_out[28])
-        ,  .`OE(`MPRJ_IO_28_CONN) (oe_28)
+        , .`OEB(`MPRJ_IO_28_CONN) (io_oeb[28])
 `else /* `ifdef MPRJ_IO_28_IO */
 `ifdef MPRJ_IO_28_I
         ,.`MPRJ_IO_28_CONN ( io_in[28])
@@ -810,7 +735,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_27_IO
         ,.`IPIN(`MPRJ_IO_27_CONN) ( io_in[27])
         ,.`OPIN(`MPRJ_IO_27_CONN) (io_out[27])
-        ,  .`OE(`MPRJ_IO_27_CONN) (oe_27)
+        , .`OEB(`MPRJ_IO_27_CONN) (io_oeb[27])
 `else /* `ifdef MPRJ_IO_27_IO */
 `ifdef MPRJ_IO_27_I
         ,.`MPRJ_IO_27_CONN ( io_in[27])
@@ -822,7 +747,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_26_IO
         ,.`IPIN(`MPRJ_IO_26_CONN) ( io_in[26])
         ,.`OPIN(`MPRJ_IO_26_CONN) (io_out[26])
-        ,  .`OE(`MPRJ_IO_26_CONN) (oe_26)
+        , .`OEB(`MPRJ_IO_26_CONN) (io_oeb[26])
 `else /* `ifdef MPRJ_IO_26_IO */
 `ifdef MPRJ_IO_26_I
         ,.`MPRJ_IO_26_CONN ( io_in[26])
@@ -834,7 +759,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_25_IO
         ,.`IPIN(`MPRJ_IO_25_CONN) ( io_in[25])
         ,.`OPIN(`MPRJ_IO_25_CONN) (io_out[25])
-        ,  .`OE(`MPRJ_IO_25_CONN) (oe_25)
+        , .`OEB(`MPRJ_IO_25_CONN) (io_oeb[25])
 `else /* `ifdef MPRJ_IO_25_IO */
 `ifdef MPRJ_IO_25_I
         ,.`MPRJ_IO_25_CONN ( io_in[25])
@@ -846,7 +771,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_24_IO
         ,.`IPIN(`MPRJ_IO_24_CONN) ( io_in[24])
         ,.`OPIN(`MPRJ_IO_24_CONN) (io_out[24])
-        ,  .`OE(`MPRJ_IO_24_CONN) (oe_24)
+        , .`OEB(`MPRJ_IO_24_CONN) (io_oeb[24])
 `else /* `ifdef MPRJ_IO_24_IO */
 `ifdef MPRJ_IO_24_I
         ,.`MPRJ_IO_24_CONN ( io_in[24])
@@ -858,7 +783,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_23_IO
         ,.`IPIN(`MPRJ_IO_23_CONN) ( io_in[23])
         ,.`OPIN(`MPRJ_IO_23_CONN) (io_out[23])
-        ,  .`OE(`MPRJ_IO_23_CONN) (oe_23)
+        , .`OEB(`MPRJ_IO_23_CONN) (io_oeb[23])
 `else /* `ifdef MPRJ_IO_23_IO */
 `ifdef MPRJ_IO_23_I
         ,.`MPRJ_IO_23_CONN ( io_in[23])
@@ -870,7 +795,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_22_IO
         ,.`IPIN(`MPRJ_IO_22_CONN) ( io_in[22])
         ,.`OPIN(`MPRJ_IO_22_CONN) (io_out[22])
-        ,  .`OE(`MPRJ_IO_22_CONN) (oe_22)
+        , .`OEB(`MPRJ_IO_22_CONN) (io_oeb[22])
 `else /* `ifdef MPRJ_IO_22_IO */
 `ifdef MPRJ_IO_22_I
         ,.`MPRJ_IO_22_CONN ( io_in[22])
@@ -882,7 +807,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_21_IO
         ,.`IPIN(`MPRJ_IO_21_CONN) ( io_in[21])
         ,.`OPIN(`MPRJ_IO_21_CONN) (io_out[21])
-        ,  .`OE(`MPRJ_IO_21_CONN) (oe_21)
+        , .`OEB(`MPRJ_IO_21_CONN) (io_oeb[21])
 `else /* `ifdef MPRJ_IO_21_IO */
 `ifdef MPRJ_IO_21_I
         ,.`MPRJ_IO_21_CONN ( io_in[21])
@@ -894,7 +819,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_20_IO
         ,.`IPIN(`MPRJ_IO_20_CONN) ( io_in[20])
         ,.`OPIN(`MPRJ_IO_20_CONN) (io_out[20])
-        ,  .`OE(`MPRJ_IO_20_CONN) (oe_20)
+        , .`OEB(`MPRJ_IO_20_CONN) (io_oeb[20])
 `else /* `ifdef MPRJ_IO_20_IO */
 `ifdef MPRJ_IO_20_I
         ,.`MPRJ_IO_20_CONN ( io_in[20])
@@ -906,7 +831,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_19_IO
         ,.`IPIN(`MPRJ_IO_19_CONN) ( io_in[19])
         ,.`OPIN(`MPRJ_IO_19_CONN) (io_out[19])
-        ,  .`OE(`MPRJ_IO_19_CONN) (oe_19)
+        , .`OEB(`MPRJ_IO_19_CONN) (io_oeb[19])
 `else /* `ifdef MPRJ_IO_19_IO */
 `ifdef MPRJ_IO_19_I
         ,.`MPRJ_IO_19_CONN ( io_in[19])
@@ -918,7 +843,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_18_IO
         ,.`IPIN(`MPRJ_IO_18_CONN) ( io_in[18])
         ,.`OPIN(`MPRJ_IO_18_CONN) (io_out[18])
-        ,  .`OE(`MPRJ_IO_18_CONN) (oe_18)
+        , .`OEB(`MPRJ_IO_18_CONN) (io_oeb[18])
 `else /* `ifdef MPRJ_IO_18_IO */
 `ifdef MPRJ_IO_18_I
         ,.`MPRJ_IO_18_CONN ( io_in[18])
@@ -930,7 +855,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_17_IO
         ,.`IPIN(`MPRJ_IO_17_CONN) ( io_in[17])
         ,.`OPIN(`MPRJ_IO_17_CONN) (io_out[17])
-        ,  .`OE(`MPRJ_IO_17_CONN) (oe_17)
+        , .`OEB(`MPRJ_IO_17_CONN) (io_oeb[17])
 `else /* `ifdef MPRJ_IO_17_IO */
 `ifdef MPRJ_IO_17_I
         ,.`MPRJ_IO_17_CONN ( io_in[17])
@@ -942,7 +867,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_16_IO
         ,.`IPIN(`MPRJ_IO_16_CONN) ( io_in[16])
         ,.`OPIN(`MPRJ_IO_16_CONN) (io_out[16])
-        ,  .`OE(`MPRJ_IO_16_CONN) (oe_16)
+        , .`OEB(`MPRJ_IO_16_CONN) (io_oeb[16])
 `else /* `ifdef MPRJ_IO_16_IO */
 `ifdef MPRJ_IO_16_I
         ,.`MPRJ_IO_16_CONN ( io_in[16])
@@ -954,7 +879,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_15_IO
         ,.`IPIN(`MPRJ_IO_15_CONN) ( io_in[15])
         ,.`OPIN(`MPRJ_IO_15_CONN) (io_out[15])
-        ,  .`OE(`MPRJ_IO_15_CONN) (oe_15)
+        , .`OEB(`MPRJ_IO_15_CONN) (io_oeb[15])
 `else /* `ifdef MPRJ_IO_15_IO */
 `ifdef MPRJ_IO_15_I
         ,.`MPRJ_IO_15_CONN ( io_in[15])
@@ -966,7 +891,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_14_IO
         ,.`IPIN(`MPRJ_IO_14_CONN) ( io_in[14])
         ,.`OPIN(`MPRJ_IO_14_CONN) (io_out[14])
-        ,  .`OE(`MPRJ_IO_14_CONN) (oe_14)
+        , .`OEB(`MPRJ_IO_14_CONN) (io_oeb[14])
 `else /* `ifdef MPRJ_IO_14_IO */
 `ifdef MPRJ_IO_14_I
         ,.`MPRJ_IO_14_CONN ( io_in[14])
@@ -978,7 +903,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_13_IO
         ,.`IPIN(`MPRJ_IO_13_CONN) ( io_in[13])
         ,.`OPIN(`MPRJ_IO_13_CONN) (io_out[13])
-        ,  .`OE(`MPRJ_IO_13_CONN) (oe_13)
+        , .`OEB(`MPRJ_IO_13_CONN) (io_oeb[13])
 `else /* `ifdef MPRJ_IO_13_IO */
 `ifdef MPRJ_IO_13_I
         ,.`MPRJ_IO_13_CONN ( io_in[13])
@@ -990,7 +915,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_12_IO
         ,.`IPIN(`MPRJ_IO_12_CONN) ( io_in[12])
         ,.`OPIN(`MPRJ_IO_12_CONN) (io_out[12])
-        ,  .`OE(`MPRJ_IO_12_CONN) (oe_12)
+        , .`OEB(`MPRJ_IO_12_CONN) (io_oeb[12])
 `else /* `ifdef MPRJ_IO_12_IO */
 `ifdef MPRJ_IO_12_I
         ,.`MPRJ_IO_12_CONN ( io_in[12])
@@ -1002,7 +927,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_11_IO
         ,.`IPIN(`MPRJ_IO_11_CONN) ( io_in[11])
         ,.`OPIN(`MPRJ_IO_11_CONN) (io_out[11])
-        ,  .`OE(`MPRJ_IO_11_CONN) (oe_11)
+        , .`OEB(`MPRJ_IO_11_CONN) (io_oeb[11])
 `else /* `ifdef MPRJ_IO_11_IO */
 `ifdef MPRJ_IO_11_I
         ,.`MPRJ_IO_11_CONN ( io_in[11])
@@ -1014,7 +939,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_10_IO
         ,.`IPIN(`MPRJ_IO_10_CONN) ( io_in[10])
         ,.`OPIN(`MPRJ_IO_10_CONN) (io_out[10])
-        ,  .`OE(`MPRJ_IO_10_CONN) (oe_10)
+        , .`OEB(`MPRJ_IO_10_CONN) (io_oeb[10])
 `else /* `ifdef MPRJ_IO_10_IO */
 `ifdef MPRJ_IO_10_I
         ,.`MPRJ_IO_10_CONN ( io_in[10])
@@ -1026,7 +951,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_9_IO
         ,.`IPIN(`MPRJ_IO_9_CONN) ( io_in[9])
         ,.`OPIN(`MPRJ_IO_9_CONN) (io_out[9])
-        ,  .`OE(`MPRJ_IO_9_CONN) (oe_9)
+        , .`OEB(`MPRJ_IO_9_CONN) (io_oeb[9])
 `else /* `ifdef MPRJ_IO_9_IO */
 `ifdef MPRJ_IO_9_I
         ,.`MPRJ_IO_9_CONN ( io_in[9])
@@ -1038,7 +963,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_8_IO
         ,.`IPIN(`MPRJ_IO_8_CONN) ( io_in[8])
         ,.`OPIN(`MPRJ_IO_8_CONN) (io_out[8])
-        ,  .`OE(`MPRJ_IO_8_CONN) (oe_8)
+        , .`OEB(`MPRJ_IO_8_CONN) (io_oeb[8])
 `else /* `ifdef MPRJ_IO_8_IO */
 `ifdef MPRJ_IO_8_I
         ,.`MPRJ_IO_8_CONN ( io_in[8])
@@ -1050,7 +975,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_7_IO
         ,.`IPIN(`MPRJ_IO_7_CONN) ( io_in[7])
         ,.`OPIN(`MPRJ_IO_7_CONN) (io_out[7])
-        ,  .`OE(`MPRJ_IO_7_CONN) (oe_7)
+        , .`OEB(`MPRJ_IO_7_CONN) (io_oeb[7])
 `else /* `ifdef MPRJ_IO_7_IO */
 `ifdef MPRJ_IO_7_I
         ,.`MPRJ_IO_7_CONN ( io_in[7])
@@ -1062,7 +987,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_6_IO
         ,.`IPIN(`MPRJ_IO_6_CONN) ( io_in[6])
         ,.`OPIN(`MPRJ_IO_6_CONN) (io_out[6])
-        ,  .`OE(`MPRJ_IO_6_CONN) (oe_6)
+        , .`OEB(`MPRJ_IO_6_CONN) (io_oeb[6])
 `else /* `ifdef MPRJ_IO_6_IO */
 `ifdef MPRJ_IO_6_I
         ,.`MPRJ_IO_6_CONN ( io_in[6])
@@ -1074,7 +999,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_5_IO
         ,.`IPIN(`MPRJ_IO_5_CONN) ( io_in[5])
         ,.`OPIN(`MPRJ_IO_5_CONN) (io_out[5])
-        ,  .`OE(`MPRJ_IO_5_CONN) (oe_5)
+        , .`OEB(`MPRJ_IO_5_CONN) (io_oeb[5])
 `else /* `ifdef MPRJ_IO_5_IO */
 `ifdef MPRJ_IO_5_I
         ,.`MPRJ_IO_5_CONN ( io_in[5])
@@ -1086,7 +1011,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_4_IO
         ,.`IPIN(`MPRJ_IO_4_CONN) ( io_in[4])
         ,.`OPIN(`MPRJ_IO_4_CONN) (io_out[4])
-        ,  .`OE(`MPRJ_IO_4_CONN) (oe_4)
+        , .`OEB(`MPRJ_IO_4_CONN) (io_oeb[4])
 `else /* `ifdef MPRJ_IO_4_IO */
 `ifdef MPRJ_IO_4_I
         ,.`MPRJ_IO_4_CONN ( io_in[4])
@@ -1098,7 +1023,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_3_IO
         ,.`IPIN(`MPRJ_IO_3_CONN) ( io_in[3])
         ,.`OPIN(`MPRJ_IO_3_CONN) (io_out[3])
-        ,  .`OE(`MPRJ_IO_3_CONN) (oe_3)
+        , .`OEB(`MPRJ_IO_3_CONN) (io_oeb[3])
 `else /* `ifdef MPRJ_IO_3_IO */
 `ifdef MPRJ_IO_3_I
         ,.`MPRJ_IO_3_CONN ( io_in[3])
@@ -1110,7 +1035,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_2_IO
         ,.`IPIN(`MPRJ_IO_2_CONN) ( io_in[2])
         ,.`OPIN(`MPRJ_IO_2_CONN) (io_out[2])
-        ,  .`OE(`MPRJ_IO_2_CONN) (oe_2)
+        , .`OEB(`MPRJ_IO_2_CONN) (io_oeb[2])
 `else /* `ifdef MPRJ_IO_2_IO */
 `ifdef MPRJ_IO_2_I
         ,.`MPRJ_IO_2_CONN ( io_in[2])
@@ -1122,7 +1047,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_1_IO
         ,.`IPIN(`MPRJ_IO_1_CONN) ( io_in[1])
         ,.`OPIN(`MPRJ_IO_1_CONN) (io_out[1])
-        ,  .`OE(`MPRJ_IO_1_CONN) (oe_1)
+        , .`OEB(`MPRJ_IO_1_CONN) (io_oeb[1])
 `else /* `ifdef MPRJ_IO_1_IO */
 `ifdef MPRJ_IO_1_I
         ,.`MPRJ_IO_1_CONN ( io_in[1])
@@ -1134,7 +1059,7 @@ module user_project_wrapper #(
 `ifdef MPRJ_IO_0_IO
         ,.`IPIN(`MPRJ_IO_0_CONN) ( io_in[0])
         ,.`OPIN(`MPRJ_IO_0_CONN) (io_out[0])
-        ,  .`OE(`MPRJ_IO_0_CONN) (oe_0)
+        , .`OEB(`MPRJ_IO_0_CONN) (io_oeb[0])
 `else /* `ifdef MPRJ_IO_0_IO */
 `ifdef MPRJ_IO_0_I
         ,.`MPRJ_IO_0_CONN ( io_in[0])
