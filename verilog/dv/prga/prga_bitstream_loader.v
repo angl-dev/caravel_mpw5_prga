@@ -132,6 +132,9 @@ module prga_bitstream_loader (
         end
     end
 
+    // Magic checker
+    prga_magic_bitstream_checker i_checker ();
+
     // tb prog_done
     reg [31:0]  prog_done_cnt;
 
