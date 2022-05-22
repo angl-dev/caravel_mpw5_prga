@@ -53,10 +53,8 @@ module user_project_wrapper (user_clock2,
  output [31:0] wbs_dat_o;
  input [3:0] wbs_sel_i;
 
- wire one_;
  wire zero_;
- wire prog_we_o;
- wire prog_dout;
+ wire one_;
 
  top dut (.ipin_x0y1_0(io_in[36]),
     .ipin_x0y1_1(io_in[31]),
@@ -89,36 +87,36 @@ module user_project_wrapper (user_clock2,
     .ipin_x9y7_0(io_in[12]),
     .ipin_x9y7_1(io_in[13]),
     .ipin_x9y8_0(io_in[14]),
-    .oe_x0y1_1(io_oeb[31]),
-    .oe_x0y2_0(io_oeb[30]),
-    .oe_x0y3_0(io_oeb[29]),
-    .oe_x0y4_0(io_oeb[28]),
-    .oe_x0y5_0(io_oeb[27]),
-    .oe_x0y6_0(io_oeb[26]),
-    .oe_x0y7_0(io_oeb[25]),
-    .oe_x0y8_0(io_oeb[24]),
-    .oe_x1y9_0(io_oeb[23]),
-    .oe_x2y9_0(io_oeb[22]),
-    .oe_x2y9_1(io_oeb[21]),
-    .oe_x3y9_0(io_oeb[20]),
-    .oe_x4y9_0(io_oeb[19]),
-    .oe_x5y9_0(io_oeb[18]),
-    .oe_x6y9_0(io_oeb[17]),
-    .oe_x7y9_0(io_oeb[16]),
-    .oe_x8y9_1(io_oeb[15]),
-    .oe_x9y1_0(io_oeb[2]),
-    .oe_x9y1_1(io_oeb[3]),
-    .oe_x9y2_0(io_oeb[4]),
-    .oe_x9y2_1(io_oeb[5]),
-    .oe_x9y3_0(io_oeb[6]),
-    .oe_x9y3_1(io_oeb[7]),
-    .oe_x9y4_0(io_oeb[8]),
-    .oe_x9y5_0(io_oeb[9]),
-    .oe_x9y5_1(io_oeb[10]),
-    .oe_x9y6_0(io_oeb[11]),
-    .oe_x9y7_0(io_oeb[12]),
-    .oe_x9y7_1(io_oeb[13]),
-    .oe_x9y8_0(io_oeb[14]),
+    .oeb_x0y1_1(io_oeb[31]),
+    .oeb_x0y2_0(io_oeb[30]),
+    .oeb_x0y3_0(io_oeb[29]),
+    .oeb_x0y4_0(io_oeb[28]),
+    .oeb_x0y5_0(io_oeb[27]),
+    .oeb_x0y6_0(io_oeb[26]),
+    .oeb_x0y7_0(io_oeb[25]),
+    .oeb_x0y8_0(io_oeb[24]),
+    .oeb_x1y9_0(io_oeb[23]),
+    .oeb_x2y9_0(io_oeb[22]),
+    .oeb_x2y9_1(io_oeb[21]),
+    .oeb_x3y9_0(io_oeb[20]),
+    .oeb_x4y9_0(io_oeb[19]),
+    .oeb_x5y9_0(io_oeb[18]),
+    .oeb_x6y9_0(io_oeb[17]),
+    .oeb_x7y9_0(io_oeb[16]),
+    .oeb_x8y9_1(io_oeb[15]),
+    .oeb_x9y1_0(io_oeb[2]),
+    .oeb_x9y1_1(io_oeb[3]),
+    .oeb_x9y2_0(io_oeb[4]),
+    .oeb_x9y2_1(io_oeb[5]),
+    .oeb_x9y3_0(io_oeb[6]),
+    .oeb_x9y3_1(io_oeb[7]),
+    .oeb_x9y4_0(io_oeb[8]),
+    .oeb_x9y5_0(io_oeb[9]),
+    .oeb_x9y5_1(io_oeb[10]),
+    .oeb_x9y6_0(io_oeb[11]),
+    .oeb_x9y7_0(io_oeb[12]),
+    .oeb_x9y7_1(io_oeb[13]),
+    .oeb_x9y8_0(io_oeb[14]),
     .opin_x0y1_1(io_out[31]),
     .opin_x0y2_0(io_out[30]),
     .opin_x0y3_0(io_out[29]),
@@ -152,22 +150,20 @@ module user_project_wrapper (user_clock2,
     .prog_clk(io_in[37]),
     .prog_din(io_in[35]),
     .prog_done(io_in[34]),
-    .prog_dout(prog_dout),
+    .prog_dout(io_out[1]),
     .prog_rst(io_in[33]),
     .prog_we(io_in[32]),
-    .prog_we_o(prog_we_o),
+    .prog_we_o(io_out[0]),
     .vccd1(vccd1),
     .vssd1(vssd1));
- assign io_oeb[0] = one_;
- assign io_oeb[1] = one_;
- assign io_oeb[32] = zero_;
- assign io_oeb[33] = zero_;
- assign io_oeb[34] = zero_;
- assign io_oeb[35] = zero_;
- assign io_oeb[36] = zero_;
- assign io_oeb[37] = zero_;
- assign io_out[0] = prog_we_o;
- assign io_out[1] = prog_dout;
+ assign io_oeb[0] = zero_;
+ assign io_oeb[1] = zero_;
+ assign io_oeb[32] = one_;
+ assign io_oeb[33] = one_;
+ assign io_oeb[34] = one_;
+ assign io_oeb[35] = one_;
+ assign io_oeb[36] = one_;
+ assign io_oeb[37] = one_;
  assign io_out[32] = zero_;
  assign io_out[33] = zero_;
  assign io_out[34] = zero_;

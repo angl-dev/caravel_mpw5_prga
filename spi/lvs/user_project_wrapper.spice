@@ -8,12 +8,12 @@
 + ipin_x6y9_1 ipin_x7y9_0 ipin_x7y9_1 ipin_x8y9_0 ipin_x8y9_1 ipin_x9y1_0 ipin_x9y1_1
 + ipin_x9y2_0 ipin_x9y2_1 ipin_x9y3_0 ipin_x9y3_1 ipin_x9y4_0 ipin_x9y4_1 ipin_x9y5_0
 + ipin_x9y5_1 ipin_x9y6_0 ipin_x9y6_1 ipin_x9y7_0 ipin_x9y7_1 ipin_x9y8_0 ipin_x9y8_1
-+ oe_x0y1_0 oe_x0y1_1 oe_x0y2_0 oe_x0y2_1 oe_x0y3_0 oe_x0y3_1 oe_x0y4_0 oe_x0y4_1
-+ oe_x0y5_0 oe_x0y5_1 oe_x0y6_0 oe_x0y6_1 oe_x0y7_0 oe_x0y7_1 oe_x0y8_0 oe_x0y8_1
-+ oe_x1y9_0 oe_x1y9_1 oe_x2y9_0 oe_x2y9_1 oe_x3y9_0 oe_x3y9_1 oe_x4y9_0 oe_x4y9_1
-+ oe_x5y9_0 oe_x5y9_1 oe_x6y9_0 oe_x6y9_1 oe_x7y9_0 oe_x7y9_1 oe_x8y9_0 oe_x8y9_1
-+ oe_x9y1_0 oe_x9y1_1 oe_x9y2_0 oe_x9y2_1 oe_x9y3_0 oe_x9y3_1 oe_x9y4_0 oe_x9y4_1
-+ oe_x9y5_0 oe_x9y5_1 oe_x9y6_0 oe_x9y6_1 oe_x9y7_0 oe_x9y7_1 oe_x9y8_0 oe_x9y8_1
++ oeb_x0y1_0 oeb_x0y1_1 oeb_x0y2_0 oeb_x0y2_1 oeb_x0y3_0 oeb_x0y3_1 oeb_x0y4_0 oeb_x0y4_1
++ oeb_x0y5_0 oeb_x0y5_1 oeb_x0y6_0 oeb_x0y6_1 oeb_x0y7_0 oeb_x0y7_1 oeb_x0y8_0 oeb_x0y8_1
++ oeb_x1y9_0 oeb_x1y9_1 oeb_x2y9_0 oeb_x2y9_1 oeb_x3y9_0 oeb_x3y9_1 oeb_x4y9_0 oeb_x4y9_1
++ oeb_x5y9_0 oeb_x5y9_1 oeb_x6y9_0 oeb_x6y9_1 oeb_x7y9_0 oeb_x7y9_1 oeb_x8y9_0 oeb_x8y9_1
++ oeb_x9y1_0 oeb_x9y1_1 oeb_x9y2_0 oeb_x9y2_1 oeb_x9y3_0 oeb_x9y3_1 oeb_x9y4_0 oeb_x9y4_1
++ oeb_x9y5_0 oeb_x9y5_1 oeb_x9y6_0 oeb_x9y6_1 oeb_x9y7_0 oeb_x9y7_1 oeb_x9y8_0 oeb_x9y8_1
 + opin_x0y1_0 opin_x0y1_1 opin_x0y2_0 opin_x0y2_1 opin_x0y3_0 opin_x0y3_1 opin_x0y4_0
 + opin_x0y4_1 opin_x0y5_0 opin_x0y5_1 opin_x0y6_0 opin_x0y6_1 opin_x0y7_0 opin_x0y7_1
 + opin_x0y8_0 opin_x0y8_1 opin_x1y9_0 opin_x1y9_1 opin_x2y9_0 opin_x2y9_1 opin_x3y9_0
@@ -131,21 +131,21 @@ Xdut io_in[36] io_in[31] io_in[30] dut/ipin_x0y2_1 io_in[29] dut/ipin_x0y3_1 io_
 + dut/ipin_x3y9_1 io_in[19] dut/ipin_x4y9_1 io_in[18] dut/ipin_x5y9_1 io_in[17] dut/ipin_x6y9_1
 + io_in[16] dut/ipin_x7y9_1 dut/ipin_x8y9_0 io_in[15] io_in[2] io_in[3] io_in[4] io_in[5]
 + io_in[6] io_in[7] io_in[8] dut/ipin_x9y4_1 io_in[9] io_in[10] io_in[11] dut/ipin_x9y6_1
-+ io_in[12] io_in[13] io_in[14] dut/ipin_x9y8_1 dut/oe_x0y1_0 io_oeb[31] io_oeb[30]
-+ dut/oe_x0y2_1 io_oeb[29] dut/oe_x0y3_1 io_oeb[28] dut/oe_x0y4_1 io_oeb[27] dut/oe_x0y5_1
-+ io_oeb[26] dut/oe_x0y6_1 io_oeb[25] dut/oe_x0y7_1 io_oeb[24] dut/oe_x0y8_1 io_oeb[23]
-+ dut/oe_x1y9_1 io_oeb[22] io_oeb[21] io_oeb[20] dut/oe_x3y9_1 io_oeb[19] dut/oe_x4y9_1
-+ io_oeb[18] dut/oe_x5y9_1 io_oeb[17] dut/oe_x6y9_1 io_oeb[16] dut/oe_x7y9_1 dut/oe_x8y9_0
++ io_in[12] io_in[13] io_in[14] dut/ipin_x9y8_1 dut/oeb_x0y1_0 io_oeb[31] io_oeb[30]
++ dut/oeb_x0y2_1 io_oeb[29] dut/oeb_x0y3_1 io_oeb[28] dut/oeb_x0y4_1 io_oeb[27] dut/oeb_x0y5_1
++ io_oeb[26] dut/oeb_x0y6_1 io_oeb[25] dut/oeb_x0y7_1 io_oeb[24] dut/oeb_x0y8_1 io_oeb[23]
++ dut/oeb_x1y9_1 io_oeb[22] io_oeb[21] io_oeb[20] dut/oeb_x3y9_1 io_oeb[19] dut/oeb_x4y9_1
++ io_oeb[18] dut/oeb_x5y9_1 io_oeb[17] dut/oeb_x6y9_1 io_oeb[16] dut/oeb_x7y9_1 dut/oeb_x8y9_0
 + io_oeb[15] io_oeb[2] io_oeb[3] io_oeb[4] io_oeb[5] io_oeb[6] io_oeb[7] io_oeb[8]
-+ dut/oe_x9y4_1 io_oeb[9] io_oeb[10] io_oeb[11] dut/oe_x9y6_1 io_oeb[12] io_oeb[13]
-+ io_oeb[14] dut/oe_x9y8_1 dut/opin_x0y1_0 io_out[31] io_out[30] dut/opin_x0y2_1 io_out[29]
-+ dut/opin_x0y3_1 io_out[28] dut/opin_x0y4_1 io_out[27] dut/opin_x0y5_1 io_out[26]
-+ dut/opin_x0y6_1 io_out[25] dut/opin_x0y7_1 io_out[24] dut/opin_x0y8_1 io_out[23]
-+ dut/opin_x1y9_1 io_out[22] io_out[21] io_out[20] dut/opin_x3y9_1 io_out[19] dut/opin_x4y9_1
-+ io_out[18] dut/opin_x5y9_1 io_out[17] dut/opin_x6y9_1 io_out[16] dut/opin_x7y9_1
-+ dut/opin_x8y9_0 io_out[15] io_out[2] io_out[3] io_out[4] io_out[5] io_out[6] io_out[7]
-+ io_out[8] dut/opin_x9y4_1 io_out[9] io_out[10] io_out[11] dut/opin_x9y6_1 io_out[12]
-+ io_out[13] io_out[14] dut/opin_x9y8_1 io_in[37] io_in[35] io_in[34] io_out[1] io_in[33]
-+ io_in[32] io_out[0] vccd1 vssd1 top
++ dut/oeb_x9y4_1 io_oeb[9] io_oeb[10] io_oeb[11] dut/oeb_x9y6_1 io_oeb[12] io_oeb[13]
++ io_oeb[14] dut/oeb_x9y8_1 dut/opin_x0y1_0 io_out[31] io_out[30] dut/opin_x0y2_1
++ io_out[29] dut/opin_x0y3_1 io_out[28] dut/opin_x0y4_1 io_out[27] dut/opin_x0y5_1
++ io_out[26] dut/opin_x0y6_1 io_out[25] dut/opin_x0y7_1 io_out[24] dut/opin_x0y8_1
++ io_out[23] dut/opin_x1y9_1 io_out[22] io_out[21] io_out[20] dut/opin_x3y9_1 io_out[19]
++ dut/opin_x4y9_1 io_out[18] dut/opin_x5y9_1 io_out[17] dut/opin_x6y9_1 io_out[16]
++ dut/opin_x7y9_1 dut/opin_x8y9_0 io_out[15] io_out[2] io_out[3] io_out[4] io_out[5]
++ io_out[6] io_out[7] io_out[8] dut/opin_x9y4_1 io_out[9] io_out[10] io_out[11] dut/opin_x9y6_1
++ io_out[12] io_out[13] io_out[14] dut/opin_x9y8_1 io_in[37] io_in[35] io_in[34] io_out[1]
++ io_in[33] io_in[32] io_out[0] vccd1 vssd1 top
 .ends
 
