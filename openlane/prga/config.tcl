@@ -62,6 +62,10 @@ set ::env(PL_TARGET_DENSITY)            0.180
 # Decreased from 250 to 115 to increase slack to avoid min hold violations
 # Under 115 does not work -> fails at global routing
 set ::env(PL_RESIZER_MAX_WIRE_LENGTH)   115
+
+set ::env(PL_RESIZER_MAX_CAP_MARGIN)        50
+set ::env(PL_RESIZER_MAX_SLEW_MARGIN)       50
+
 # Timing Closure doc suggested to increase max buffer percentage and decrease
 # core flow util but over this percentage and lower core flow util does not
 # help increasing slack
@@ -71,8 +75,11 @@ set ::env(GLB_RESIZER_HOLD_MAX_BUFFER_PERCENT) 85
 # Timing Closure doc suggested to increase margin if there is 
 # timing violations at the DRC stage
 # Currently being tested to see if it actually helps
-set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.3
-set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.3
+set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.35
+set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.35
+
+set ::env(GLB_RESIZER_MAX_CAP_MARGIN)       20
+set ::env(GLB_RESIZER_MAX_SLEW_MARGIN)      20
 
 # Increased to 350 and it is verified to help slack but DOES NOT HELP OVER THIS
 set ::env(CTS_CLK_MAX_WIRE_LENGTH)      350
