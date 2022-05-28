@@ -38,10 +38,10 @@ set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/user_project_wrapper.v"
 
 ## Clock configurations
-set ::env(CLOCK_PORT) "user_clock2"
+set ::env(CLOCK_PORT) "io_in\[37\]"
 set ::env(CLOCK_NET) "top.prog_clk top.ipin_x0y1_0"
 
-set ::env(CLOCK_PERIOD) "1100"
+set ::env(CLOCK_PERIOD) "1000"
 
 #set ::env(FP_SIZING) absolute
 #set ::env(DIE_AREA) "0 0 2920 3520"
@@ -76,11 +76,14 @@ set ::env(FP_PDN_CHECK_NODES) 0
 set ::env(SYNTH_TOP_LEVEL) 1
 set ::env(PL_RANDOM_GLB_PLACEMENT) 1
 
+set ::env(GLB_RESIZER_MAX_SLEW_MARGIN)      20
+
 set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
 set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
 set ::env(PL_RESIZER_BUFFER_INPUT_PORTS) 0
 set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 0
 
+set ::env(FP_PDN_VPITCH) 51.2
 set ::env(FP_PDN_ENABLE_RAILS) 0
 
 set ::env(DIODE_INSERTION_STRATEGY) 0

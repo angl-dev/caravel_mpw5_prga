@@ -92,237 +92,982 @@ module user_project_wrapper #(
     output [2:0] user_irq
 );
 
-/*--------------------------------------*/
-/* User project is instantiated  here   */
-/*--------------------------------------*/
-
-   // GPIO PINS
-   localparam  PIN_PROG_DIN     = 37;
-   localparam  PIN_PROG_DONE    = 36;
-   localparam  PIN_PROG_RST     = 35;
-   localparam  PIN_PROG_WE      = 34;
-   localparam  PIN_33           = 33;
-   localparam  PIN_32           = 32;
-   localparam  PIN_31           = 31;
-   localparam  PIN_30           = 30;
-   localparam  PIN_29           = 29;
-   localparam  PIN_28           = 28;
-   localparam  PIN_27           = 27;
-   localparam  PIN_26           = 26;
-   localparam  PIN_25           = 25;
-   localparam  PIN_24           = 24;
-   localparam  PIN_23           = 23;
-   localparam  PIN_22           = 22;
-   localparam  PIN_21           = 21;
-   localparam  PIN_20           = 20;
-   localparam  PIN_19           = 19;
-   localparam  PIN_18           = 18;
-   localparam  PIN_17           = 17;
-   localparam  PIN_16           = 16;
-   localparam  PIN_15           = 15;
-   localparam  PIN_14           = 14;
-   localparam  PIN_13           = 13;
-   localparam  PIN_12           = 12;
-   localparam  PIN_11           = 11;
-   localparam  PIN_10           = 10;
-   localparam  PIN_9            = 9;
-   localparam  PIN_8            = 8;
-   localparam  PIN_7            = 7;
-   localparam  PIN_6            = 6;
-   localparam  PIN_5            = 5;
-   localparam  PIN_4            = 4;
-   localparam  PIN_3            = 3;
-   localparam  PIN_2            = 2;
-   localparam  PIN_PROG_DOUT    = 1;
-   localparam  PIN_PROG_WE_O    = 0;
-
-   // 
-   wire [0:0]                   prog_clk, prog_rst, prog_done, prog_we, prog_din, prog_dout, prog_we_o, not_used;
-   wire [0:0]                   clk;
-   
-   //prog_din
-   assign prog_din = io_in[PIN_PROG_DIN];
-   assign io_oeb[PIN_PROG_DIN] = 1'b0;
-   assign io_out[PIN_PROG_DIN] = 1'b0;
-   //prog_done
-   assign prog_done = io_in[PIN_PROG_DONE];
-   assign io_oeb[PIN_PROG_DONE] = 1'b0;
-   assign io_out[PIN_PROG_DONE] = 1'b0;
-   //prog_rst
-   assign prog_rst = io_in[PIN_PROG_RST];
-   assign io_oeb[PIN_PROG_RST] = 1'b0;
-   assign io_out[PIN_PROG_RST] = 1'b0;
-   //prog_we
-   assign prog_we = io_in[PIN_PROG_WE];
-   assign io_oeb[PIN_PROG_WE] = 1'b0;
-   assign io_out[PIN_PROG_WE] = 1'b0;
-
-   //prog_dout
-   assign not_used = io_in[PIN_PROG_DOUT];
-   assign io_oeb[PIN_PROG_DOUT] = 1'b1;
-   assign io_out[PIN_PROG_DOUT] = prog_dout;
-   //prog_dout
-   assign not_used = io_in[PIN_PROG_WE_O];
-   assign io_oeb[PIN_PROG_WE_O] = 1'b1;
-   assign io_out[PIN_PROG_WE_O] = prog_we_o;
-
-
    // Ground not used ouputs
    assign wbs_ack_o   =   1'b0;
    assign wbs_dat_o   =  32'b0;
    assign user_irq    =   3'b0;
    assign la_data_out = 128'b0;
 
-      
-   // We use user_clock2 instead of external clock through GPIO due to the reported issue with scipts and brackets in names of constraints
-   // 
-   assign prog_clk = user_clock2;
-   assign clk = user_clock2;
+/*--------------------------------------*/
+/* User project is instantiated  here   */
+/*--------------------------------------*/
+
+// auto-generated configuration
+`define MPRJ_IO_37_I
+`define MPRJ_IO_37_CONN prog_clk
+
+`define MPRJ_IO_36_I
+`define MPRJ_IO_36_CONN ipin_x0y1_0
+
+`define MPRJ_IO_35_I
+`define MPRJ_IO_35_CONN prog_din
+
+`define MPRJ_IO_34_I
+`define MPRJ_IO_34_CONN prog_done
+
+`define MPRJ_IO_33_I
+`define MPRJ_IO_33_CONN prog_rst
+
+`define MPRJ_IO_32_I
+`define MPRJ_IO_32_CONN prog_we
+
+`define MPRJ_IO_1_O
+`define MPRJ_IO_1_CONN  prog_dout
+
+`define MPRJ_IO_0_O
+`define MPRJ_IO_0_CONN  prog_we_o
+
+`define MPRJ_IO_31_IO
+`define MPRJ_IO_31_CONN x0y1_1
+
+`define MPRJ_IO_30_IO
+`define MPRJ_IO_30_CONN x0y2_0
+
+`define MPRJ_IO_29_IO
+`define MPRJ_IO_29_CONN x0y3_0
+
+`define MPRJ_IO_28_IO
+`define MPRJ_IO_28_CONN x0y4_0
+
+`define MPRJ_IO_27_IO
+`define MPRJ_IO_27_CONN x0y5_0
+
+`define MPRJ_IO_26_IO
+`define MPRJ_IO_26_CONN x0y6_0
+
+`define MPRJ_IO_25_IO
+`define MPRJ_IO_25_CONN x0y7_0
+
+`define MPRJ_IO_24_IO
+`define MPRJ_IO_24_CONN x0y8_0
+
+`define MPRJ_IO_23_IO
+`define MPRJ_IO_23_CONN x1y10_0
+
+`define MPRJ_IO_22_IO
+`define MPRJ_IO_22_CONN x2y10_0
+
+`define MPRJ_IO_21_IO
+`define MPRJ_IO_21_CONN x2y10_1
+
+`define MPRJ_IO_20_IO
+`define MPRJ_IO_20_CONN x3y10_0
+
+`define MPRJ_IO_19_IO
+`define MPRJ_IO_19_CONN x4y10_0
+
+`define MPRJ_IO_18_IO
+`define MPRJ_IO_18_CONN x5y10_0
+
+`define MPRJ_IO_17_IO
+`define MPRJ_IO_17_CONN x6y10_0
+
+`define MPRJ_IO_16_IO
+`define MPRJ_IO_16_CONN x7y10_0
+
+`define MPRJ_IO_15_IO
+`define MPRJ_IO_15_CONN x8y10_1
+
+`define MPRJ_IO_14_IO
+`define MPRJ_IO_14_CONN x10y8_0
+
+`define MPRJ_IO_13_IO
+`define MPRJ_IO_13_CONN x10y7_1
+
+`define MPRJ_IO_12_IO
+`define MPRJ_IO_12_CONN x10y7_0
+
+`define MPRJ_IO_11_IO
+`define MPRJ_IO_11_CONN x10y6_0
+
+`define MPRJ_IO_10_IO
+`define MPRJ_IO_10_CONN x10y5_1
+
+`define MPRJ_IO_9_IO
+`define MPRJ_IO_9_CONN x10y5_0
+
+`define MPRJ_IO_8_IO
+`define MPRJ_IO_8_CONN x10y4_0
+
+`define MPRJ_IO_7_IO
+`define MPRJ_IO_7_CONN x10y3_1
+
+`define MPRJ_IO_6_IO
+`define MPRJ_IO_6_CONN x10y3_0
+
+`define MPRJ_IO_5_IO
+`define MPRJ_IO_5_CONN x10y2_1
+
+`define MPRJ_IO_4_IO
+`define MPRJ_IO_4_CONN x10y2_0
+
+`define MPRJ_IO_3_IO
+`define MPRJ_IO_3_CONN x10y1_1
+
+`define MPRJ_IO_2_IO
+`define MPRJ_IO_2_CONN x10y1_0
+
+/*---------------------*/
+/* Do not change below */
+/*---------------------*/
+`ifdef MPRJ_IO_37_IO
+`else /* `ifdef MPRJ_IO_37_IO */
+`ifdef MPRJ_IO_37_I
+    assign io_out[37] = 1'b0;
+    assign io_oeb[37] = 1'b1;
+`else /* `ifdef MPRJ_IO_37_I */
+    assign io_oeb[37] = 1'b0;
+`endif /* `ifdef MPRJ_IO_37_I */
+`endif /* `ifdef MPRJ_IO_37_IO */
+    
+`ifdef MPRJ_IO_36_IO
+`else /* `ifdef MPRJ_IO_36_IO */
+`ifdef MPRJ_IO_36_I
+    assign io_out[36] = 1'b0;
+    assign io_oeb[36] = 1'b1;
+`else /* `ifdef MPRJ_IO_36_I */
+    assign io_oeb[36] = 1'b0;
+`endif /* `ifdef MPRJ_IO_36_I */
+`endif /* `ifdef MPRJ_IO_36_IO */
+    
+`ifdef MPRJ_IO_35_IO
+`else /* `ifdef MPRJ_IO_35_IO */
+`ifdef MPRJ_IO_35_I
+    assign io_out[35] = 1'b0;
+    assign io_oeb[35] = 1'b1;
+`else /* `ifdef MPRJ_IO_35_I */
+    assign io_oeb[35] = 1'b0;
+`endif /* `ifdef MPRJ_IO_35_I */
+`endif /* `ifdef MPRJ_IO_35_IO */
+    
+`ifdef MPRJ_IO_34_IO
+`else /* `ifdef MPRJ_IO_34_IO */
+`ifdef MPRJ_IO_34_I
+    assign io_out[34] = 1'b0;
+    assign io_oeb[34] = 1'b1;
+`else /* `ifdef MPRJ_IO_34_I */
+    assign io_oeb[34] = 1'b0;
+`endif /* `ifdef MPRJ_IO_34_I */
+`endif /* `ifdef MPRJ_IO_34_IO */
+    
+`ifdef MPRJ_IO_33_IO
+`else /* `ifdef MPRJ_IO_33_IO */
+`ifdef MPRJ_IO_33_I
+    assign io_out[33] = 1'b0;
+    assign io_oeb[33] = 1'b1;
+`else /* `ifdef MPRJ_IO_33_I */
+    assign io_oeb[33] = 1'b0;
+`endif /* `ifdef MPRJ_IO_33_I */
+`endif /* `ifdef MPRJ_IO_33_IO */
+    
+`ifdef MPRJ_IO_32_IO
+`else /* `ifdef MPRJ_IO_32_IO */
+`ifdef MPRJ_IO_32_I
+    assign io_out[32] = 1'b0;
+    assign io_oeb[32] = 1'b1;
+`else /* `ifdef MPRJ_IO_32_I */
+    assign io_oeb[32] = 1'b0;
+`endif /* `ifdef MPRJ_IO_32_I */
+`endif /* `ifdef MPRJ_IO_32_IO */
+    
+`ifdef MPRJ_IO_31_IO
+`else /* `ifdef MPRJ_IO_31_IO */
+`ifdef MPRJ_IO_31_I
+    assign io_out[31] = 1'b0;
+    assign io_oeb[31] = 1'b1;
+`else /* `ifdef MPRJ_IO_31_I */
+    assign io_oeb[31] = 1'b0;
+`endif /* `ifdef MPRJ_IO_31_I */
+`endif /* `ifdef MPRJ_IO_31_IO */
+    
+`ifdef MPRJ_IO_30_IO
+`else /* `ifdef MPRJ_IO_30_IO */
+`ifdef MPRJ_IO_30_I
+    assign io_out[30] = 1'b0;
+    assign io_oeb[30] = 1'b1;
+`else /* `ifdef MPRJ_IO_30_I */
+    assign io_oeb[30] = 1'b0;
+`endif /* `ifdef MPRJ_IO_30_I */
+`endif /* `ifdef MPRJ_IO_30_IO */
+    
+`ifdef MPRJ_IO_29_IO
+`else /* `ifdef MPRJ_IO_29_IO */
+`ifdef MPRJ_IO_29_I
+    assign io_out[29] = 1'b0;
+    assign io_oeb[29] = 1'b1;
+`else /* `ifdef MPRJ_IO_29_I */
+    assign io_oeb[29] = 1'b0;
+`endif /* `ifdef MPRJ_IO_29_I */
+`endif /* `ifdef MPRJ_IO_29_IO */
+    
+`ifdef MPRJ_IO_28_IO
+`else /* `ifdef MPRJ_IO_28_IO */
+`ifdef MPRJ_IO_28_I
+    assign io_out[28] = 1'b0;
+    assign io_oeb[28] = 1'b1;
+`else /* `ifdef MPRJ_IO_28_I */
+    assign io_oeb[28] = 1'b0;
+`endif /* `ifdef MPRJ_IO_28_I */
+`endif /* `ifdef MPRJ_IO_28_IO */
+    
+`ifdef MPRJ_IO_27_IO
+`else /* `ifdef MPRJ_IO_27_IO */
+`ifdef MPRJ_IO_27_I
+    assign io_out[27] = 1'b0;
+    assign io_oeb[27] = 1'b1;
+`else /* `ifdef MPRJ_IO_27_I */
+    assign io_oeb[27] = 1'b0;
+`endif /* `ifdef MPRJ_IO_27_I */
+`endif /* `ifdef MPRJ_IO_27_IO */
+    
+`ifdef MPRJ_IO_26_IO
+`else /* `ifdef MPRJ_IO_26_IO */
+`ifdef MPRJ_IO_26_I
+    assign io_out[26] = 1'b0;
+    assign io_oeb[26] = 1'b1;
+`else /* `ifdef MPRJ_IO_26_I */
+    assign io_oeb[26] = 1'b0;
+`endif /* `ifdef MPRJ_IO_26_I */
+`endif /* `ifdef MPRJ_IO_26_IO */
+    
+`ifdef MPRJ_IO_25_IO
+`else /* `ifdef MPRJ_IO_25_IO */
+`ifdef MPRJ_IO_25_I
+    assign io_out[25] = 1'b0;
+    assign io_oeb[25] = 1'b1;
+`else /* `ifdef MPRJ_IO_25_I */
+    assign io_oeb[25] = 1'b0;
+`endif /* `ifdef MPRJ_IO_25_I */
+`endif /* `ifdef MPRJ_IO_25_IO */
+    
+`ifdef MPRJ_IO_24_IO
+`else /* `ifdef MPRJ_IO_24_IO */
+`ifdef MPRJ_IO_24_I
+    assign io_out[24] = 1'b0;
+    assign io_oeb[24] = 1'b1;
+`else /* `ifdef MPRJ_IO_24_I */
+    assign io_oeb[24] = 1'b0;
+`endif /* `ifdef MPRJ_IO_24_I */
+`endif /* `ifdef MPRJ_IO_24_IO */
+    
+`ifdef MPRJ_IO_23_IO
+`else /* `ifdef MPRJ_IO_23_IO */
+`ifdef MPRJ_IO_23_I
+    assign io_out[23] = 1'b0;
+    assign io_oeb[23] = 1'b1;
+`else /* `ifdef MPRJ_IO_23_I */
+    assign io_oeb[23] = 1'b0;
+`endif /* `ifdef MPRJ_IO_23_I */
+`endif /* `ifdef MPRJ_IO_23_IO */
+    
+`ifdef MPRJ_IO_22_IO
+`else /* `ifdef MPRJ_IO_22_IO */
+`ifdef MPRJ_IO_22_I
+    assign io_out[22] = 1'b0;
+    assign io_oeb[22] = 1'b1;
+`else /* `ifdef MPRJ_IO_22_I */
+    assign io_oeb[22] = 1'b0;
+`endif /* `ifdef MPRJ_IO_22_I */
+`endif /* `ifdef MPRJ_IO_22_IO */
+    
+`ifdef MPRJ_IO_21_IO
+`else /* `ifdef MPRJ_IO_21_IO */
+`ifdef MPRJ_IO_21_I
+    assign io_out[21] = 1'b0;
+    assign io_oeb[21] = 1'b1;
+`else /* `ifdef MPRJ_IO_21_I */
+    assign io_oeb[21] = 1'b0;
+`endif /* `ifdef MPRJ_IO_21_I */
+`endif /* `ifdef MPRJ_IO_21_IO */
+    
+`ifdef MPRJ_IO_20_IO
+`else /* `ifdef MPRJ_IO_20_IO */
+`ifdef MPRJ_IO_20_I
+    assign io_out[20] = 1'b0;
+    assign io_oeb[20] = 1'b1;
+`else /* `ifdef MPRJ_IO_20_I */
+    assign io_oeb[20] = 1'b0;
+`endif /* `ifdef MPRJ_IO_20_I */
+`endif /* `ifdef MPRJ_IO_20_IO */
+    
+`ifdef MPRJ_IO_19_IO
+`else /* `ifdef MPRJ_IO_19_IO */
+`ifdef MPRJ_IO_19_I
+    assign io_out[19] = 1'b0;
+    assign io_oeb[19] = 1'b1;
+`else /* `ifdef MPRJ_IO_19_I */
+    assign io_oeb[19] = 1'b0;
+`endif /* `ifdef MPRJ_IO_19_I */
+`endif /* `ifdef MPRJ_IO_19_IO */
+    
+`ifdef MPRJ_IO_18_IO
+`else /* `ifdef MPRJ_IO_18_IO */
+`ifdef MPRJ_IO_18_I
+    assign io_out[18] = 1'b0;
+    assign io_oeb[18] = 1'b1;
+`else /* `ifdef MPRJ_IO_18_I */
+    assign io_oeb[18] = 1'b0;
+`endif /* `ifdef MPRJ_IO_18_I */
+`endif /* `ifdef MPRJ_IO_18_IO */
+    
+`ifdef MPRJ_IO_17_IO
+`else /* `ifdef MPRJ_IO_17_IO */
+`ifdef MPRJ_IO_17_I
+    assign io_out[17] = 1'b0;
+    assign io_oeb[17] = 1'b1;
+`else /* `ifdef MPRJ_IO_17_I */
+    assign io_oeb[17] = 1'b0;
+`endif /* `ifdef MPRJ_IO_17_I */
+`endif /* `ifdef MPRJ_IO_17_IO */
+    
+`ifdef MPRJ_IO_16_IO
+`else /* `ifdef MPRJ_IO_16_IO */
+`ifdef MPRJ_IO_16_I
+    assign io_out[16] = 1'b0;
+    assign io_oeb[16] = 1'b1;
+`else /* `ifdef MPRJ_IO_16_I */
+    assign io_oeb[16] = 1'b0;
+`endif /* `ifdef MPRJ_IO_16_I */
+`endif /* `ifdef MPRJ_IO_16_IO */
+    
+`ifdef MPRJ_IO_15_IO
+`else /* `ifdef MPRJ_IO_15_IO */
+`ifdef MPRJ_IO_15_I
+    assign io_out[15] = 1'b0;
+    assign io_oeb[15] = 1'b1;
+`else /* `ifdef MPRJ_IO_15_I */
+    assign io_oeb[15] = 1'b0;
+`endif /* `ifdef MPRJ_IO_15_I */
+`endif /* `ifdef MPRJ_IO_15_IO */
+    
+`ifdef MPRJ_IO_14_IO
+`else /* `ifdef MPRJ_IO_14_IO */
+`ifdef MPRJ_IO_14_I
+    assign io_out[14] = 1'b0;
+    assign io_oeb[14] = 1'b1;
+`else /* `ifdef MPRJ_IO_14_I */
+    assign io_oeb[14] = 1'b0;
+`endif /* `ifdef MPRJ_IO_14_I */
+`endif /* `ifdef MPRJ_IO_14_IO */
+    
+`ifdef MPRJ_IO_13_IO
+`else /* `ifdef MPRJ_IO_13_IO */
+`ifdef MPRJ_IO_13_I
+    assign io_out[13] = 1'b0;
+    assign io_oeb[13] = 1'b1;
+`else /* `ifdef MPRJ_IO_13_I */
+    assign io_oeb[13] = 1'b0;
+`endif /* `ifdef MPRJ_IO_13_I */
+`endif /* `ifdef MPRJ_IO_13_IO */
+    
+`ifdef MPRJ_IO_12_IO
+`else /* `ifdef MPRJ_IO_12_IO */
+`ifdef MPRJ_IO_12_I
+    assign io_out[12] = 1'b0;
+    assign io_oeb[12] = 1'b1;
+`else /* `ifdef MPRJ_IO_12_I */
+    assign io_oeb[12] = 1'b0;
+`endif /* `ifdef MPRJ_IO_12_I */
+`endif /* `ifdef MPRJ_IO_12_IO */
+    
+`ifdef MPRJ_IO_11_IO
+`else /* `ifdef MPRJ_IO_11_IO */
+`ifdef MPRJ_IO_11_I
+    assign io_out[11] = 1'b0;
+    assign io_oeb[11] = 1'b1;
+`else /* `ifdef MPRJ_IO_11_I */
+    assign io_oeb[11] = 1'b0;
+`endif /* `ifdef MPRJ_IO_11_I */
+`endif /* `ifdef MPRJ_IO_11_IO */
+    
+`ifdef MPRJ_IO_10_IO
+`else /* `ifdef MPRJ_IO_10_IO */
+`ifdef MPRJ_IO_10_I
+    assign io_out[10] = 1'b0;
+    assign io_oeb[10] = 1'b1;
+`else /* `ifdef MPRJ_IO_10_I */
+    assign io_oeb[10] = 1'b0;
+`endif /* `ifdef MPRJ_IO_10_I */
+`endif /* `ifdef MPRJ_IO_10_IO */
+    
+`ifdef MPRJ_IO_9_IO
+`else /* `ifdef MPRJ_IO_9_IO */
+`ifdef MPRJ_IO_9_I
+    assign io_out[9] = 1'b0;
+    assign io_oeb[9] = 1'b1;
+`else /* `ifdef MPRJ_IO_9_I */
+    assign io_oeb[9] = 1'b0;
+`endif /* `ifdef MPRJ_IO_9_I */
+`endif /* `ifdef MPRJ_IO_9_IO */
+    
+`ifdef MPRJ_IO_8_IO
+`else /* `ifdef MPRJ_IO_8_IO */
+`ifdef MPRJ_IO_8_I
+    assign io_out[8] = 1'b0;
+    assign io_oeb[8] = 1'b1;
+`else /* `ifdef MPRJ_IO_8_I */
+    assign io_oeb[8] = 1'b0;
+`endif /* `ifdef MPRJ_IO_8_I */
+`endif /* `ifdef MPRJ_IO_8_IO */
+    
+`ifdef MPRJ_IO_7_IO
+`else /* `ifdef MPRJ_IO_7_IO */
+`ifdef MPRJ_IO_7_I
+    assign io_out[7] = 1'b0;
+    assign io_oeb[7] = 1'b1;
+`else /* `ifdef MPRJ_IO_7_I */
+    assign io_oeb[7] = 1'b0;
+`endif /* `ifdef MPRJ_IO_7_I */
+`endif /* `ifdef MPRJ_IO_7_IO */
+    
+`ifdef MPRJ_IO_6_IO
+`else /* `ifdef MPRJ_IO_6_IO */
+`ifdef MPRJ_IO_6_I
+    assign io_out[6] = 1'b0;
+    assign io_oeb[6] = 1'b1;
+`else /* `ifdef MPRJ_IO_6_I */
+    assign io_oeb[6] = 1'b0;
+`endif /* `ifdef MPRJ_IO_6_I */
+`endif /* `ifdef MPRJ_IO_6_IO */
+    
+`ifdef MPRJ_IO_5_IO
+`else /* `ifdef MPRJ_IO_5_IO */
+`ifdef MPRJ_IO_5_I
+    assign io_out[5] = 1'b0;
+    assign io_oeb[5] = 1'b1;
+`else /* `ifdef MPRJ_IO_5_I */
+    assign io_oeb[5] = 1'b0;
+`endif /* `ifdef MPRJ_IO_5_I */
+`endif /* `ifdef MPRJ_IO_5_IO */
+    
+`ifdef MPRJ_IO_4_IO
+`else /* `ifdef MPRJ_IO_4_IO */
+`ifdef MPRJ_IO_4_I
+    assign io_out[4] = 1'b0;
+    assign io_oeb[4] = 1'b1;
+`else /* `ifdef MPRJ_IO_4_I */
+    assign io_oeb[4] = 1'b0;
+`endif /* `ifdef MPRJ_IO_4_I */
+`endif /* `ifdef MPRJ_IO_4_IO */
+    
+`ifdef MPRJ_IO_3_IO
+`else /* `ifdef MPRJ_IO_3_IO */
+`ifdef MPRJ_IO_3_I
+    assign io_out[3] = 1'b0;
+    assign io_oeb[3] = 1'b1;
+`else /* `ifdef MPRJ_IO_3_I */
+    assign io_oeb[3] = 1'b0;
+`endif /* `ifdef MPRJ_IO_3_I */
+`endif /* `ifdef MPRJ_IO_3_IO */
+    
+`ifdef MPRJ_IO_2_IO
+`else /* `ifdef MPRJ_IO_2_IO */
+`ifdef MPRJ_IO_2_I
+    assign io_out[2] = 1'b0;
+    assign io_oeb[2] = 1'b1;
+`else /* `ifdef MPRJ_IO_2_I */
+    assign io_oeb[2] = 1'b0;
+`endif /* `ifdef MPRJ_IO_2_I */
+`endif /* `ifdef MPRJ_IO_2_IO */
+    
+`ifdef MPRJ_IO_1_IO
+`else /* `ifdef MPRJ_IO_1_IO */
+`ifdef MPRJ_IO_1_I
+    assign io_out[1] = 1'b0;
+    assign io_oeb[1] = 1'b1;
+`else /* `ifdef MPRJ_IO_1_I */
+    assign io_oeb[1] = 1'b0;
+`endif /* `ifdef MPRJ_IO_1_I */
+`endif /* `ifdef MPRJ_IO_1_IO */
+    
+`ifdef MPRJ_IO_0_IO
+`else /* `ifdef MPRJ_IO_0_IO */
+`ifdef MPRJ_IO_0_I
+    assign io_out[0] = 1'b0;
+    assign io_oeb[0] = 1'b1;
+`else /* `ifdef MPRJ_IO_0_I */
+    assign io_oeb[0] = 1'b0;
+`endif /* `ifdef MPRJ_IO_0_I */
+`endif /* `ifdef MPRJ_IO_0_IO */
    
    //~
    // FPGA instance   
+`define IPIN(x) ipin_``x``
+`define OPIN(x) opin_``x``
+`define OEB(x)   oeb_``x``
    
    top dut (
 `ifdef USE_POWER_PINS
 	    .vccd1(vccd1),	// User area 1 1.8V power
 	    .vssd1(vssd1),	// User area 1 digital ground
 `endif
-            .prog_clk(prog_clk)//
-            ,.prog_rst(prog_rst)//
-            ,.prog_done(prog_done)//
-            ,.prog_we(prog_we)//
-            ,.prog_we_o(prog_we_o)//
-            ,.prog_din(prog_din)//
-            ,.prog_dout(prog_dout)//
-            // PIN_CLK;
-            ,.ipin_x0y1_0(clk)
-            ,.opin_x0y1_0()
-            ,  .oe_x0y1_0()
-            // PIN_33
-            ,.ipin_x0y1_1( io_in[PIN_33])
-            ,.opin_x0y1_1(io_out[PIN_33])
-            ,  .oe_x0y1_1(io_oeb[PIN_33])
-            // PIN_32
-            ,.ipin_x0y2_0( io_in[PIN_32])
-            ,.opin_x0y2_0(io_out[PIN_32])
-            ,  .oe_x0y2_0(io_oeb[PIN_32])
-            // PIN_31
-            ,.ipin_x0y2_1( io_in[PIN_31])
-            ,.opin_x0y2_1(io_out[PIN_31])
-            ,  .oe_x0y2_1(io_oeb[PIN_31])
-            // PIN_30
-            ,.ipin_x0y3_0( io_in[PIN_30])
-            ,.opin_x0y3_0(io_out[PIN_30])
-            ,  .oe_x0y3_0(io_oeb[PIN_30])
-            // PIN_29
-            ,.ipin_x0y4_0( io_in[PIN_29])
-            ,.opin_x0y4_0(io_out[PIN_29])
-            ,  .oe_x0y4_0(io_oeb[PIN_29])
-            // PIN_28
-            ,.ipin_x0y5_0( io_in[PIN_28])
-            ,.opin_x0y5_0(io_out[PIN_28])
-            ,  .oe_x0y5_0(io_oeb[PIN_28])
-            // PIN_27
-            ,.ipin_x0y6_0( io_in[PIN_27])
-            ,.opin_x0y6_0(io_out[PIN_27])
-            ,  .oe_x0y6_0(io_oeb[PIN_27])
-            // PIN_26
-            ,.ipin_x0y6_1( io_in[PIN_26])
-            ,.opin_x0y6_1(io_out[PIN_26])
-            ,  .oe_x0y6_1(io_oeb[PIN_26])
-            // PIN_25
-            ,.ipin_x0y7_0( io_in[PIN_25])
-            ,.opin_x0y7_0(io_out[PIN_25])
-            ,  .oe_x0y7_0(io_oeb[PIN_25])
-            // PIN_24
-            ,.ipin_x0y8_0( io_in[PIN_24])
-            ,.opin_x0y8_0(io_out[PIN_24])
-            ,  .oe_x0y8_0(io_oeb[PIN_24])
-            // PIN_23
-            ,.ipin_x1y9_0( io_in[PIN_23])
-            ,.opin_x1y9_0(io_out[PIN_23])
-            ,  .oe_x1y9_0(io_oeb[PIN_23])
-            // PIN_22
-            ,.ipin_x2y9_0( io_in[PIN_22])
-            ,.opin_x2y9_0(io_out[PIN_22])
-            ,  .oe_x2y9_0(io_oeb[PIN_22])
-            // PIN_21
-            ,.ipin_x2y9_1( io_in[PIN_21])
-            ,.opin_x2y9_1(io_out[PIN_21])
-            ,  .oe_x2y9_1(io_oeb[PIN_21])
-            // PIN_20
-            ,.ipin_x3y9_0( io_in[PIN_20])
-            ,.opin_x3y9_0(io_out[PIN_20])
-            ,  .oe_x3y9_0(io_oeb[PIN_20])
-            // PIN_19
-            ,.ipin_x4y9_0( io_in[PIN_19])
-            ,.opin_x4y9_0(io_out[PIN_19])
-            ,  .oe_x4y9_0(io_oeb[PIN_19])
-            // PIN_18
-            ,.ipin_x5y9_0( io_in[PIN_18])
-            ,.opin_x5y9_0(io_out[PIN_18])
-            ,  .oe_x5y9_0(io_oeb[PIN_18])
-            // PIN_17
-            ,.ipin_x6y9_0( io_in[PIN_17])
-            ,.opin_x6y9_0(io_out[PIN_17])
-            ,  .oe_x6y9_0(io_oeb[PIN_17])
-            // PIN_16
-            ,.ipin_x7y9_0( io_in[PIN_16])
-            ,.opin_x7y9_0(io_out[PIN_16])
-            ,  .oe_x7y9_0(io_oeb[PIN_16])
-            // PIN_15
-            ,.ipin_x7y9_1( io_in[PIN_15])
-            ,.opin_x7y9_1(io_out[PIN_15])
-            ,  .oe_x7y9_1(io_oeb[PIN_15])
-            // PIN_14
-            ,.ipin_x8y9_1( io_in[PIN_14])
-            ,.opin_x8y9_1(io_out[PIN_14])
-            ,  .oe_x8y9_1(io_oeb[PIN_14])
-            // PIN_13
-            ,.ipin_x9y8_0( io_in[PIN_13])
-            ,.opin_x9y8_0(io_out[PIN_13])
-            ,  .oe_x9y8_0(io_oeb[PIN_13])
-            // PIN_12
-            ,.ipin_x9y7_1( io_in[PIN_12])
-            ,.opin_x9y7_1(io_out[PIN_12])
-            ,  .oe_x9y7_1(io_oeb[PIN_12])
-            // PIN_11
-            ,.ipin_x9y7_0( io_in[PIN_11])
-            ,.opin_x9y7_0(io_out[PIN_11])
-            ,  .oe_x9y7_0(io_oeb[PIN_11])
-            // PIN_10
-            ,.ipin_x9y6_0( io_in[PIN_10])
-            ,.opin_x9y6_0(io_out[PIN_10])
-            ,  .oe_x9y6_0(io_oeb[PIN_10])
-            // PIN_9
-            ,.ipin_x9y5_1( io_in[PIN_9])
-            ,.opin_x9y5_1(io_out[PIN_9])
-            ,  .oe_x9y5_1(io_oeb[PIN_9])
-            // PIN_8
-            ,.ipin_x9y5_0( io_in[PIN_8])
-            ,.opin_x9y5_0(io_out[PIN_8])
-            ,  .oe_x9y5_0(io_oeb[PIN_8])
-            // PIN_7
-            ,.ipin_x9y4_0( io_in[PIN_7])
-            ,.opin_x9y4_0(io_out[PIN_7])
-            ,  .oe_x9y4_0(io_oeb[PIN_7])
-            // PIN_6
-            ,.ipin_x9y3_0( io_in[PIN_6])
-            ,.opin_x9y3_0(io_out[PIN_6])
-            ,  .oe_x9y3_0(io_oeb[PIN_6])
-            // PIN_5
-            ,.ipin_x9y2_1( io_in[PIN_5])
-            ,.opin_x9y2_1(io_out[PIN_5])
-            ,  .oe_x9y2_1(io_oeb[PIN_5])
-            // PIN_4
-            ,.ipin_x9y2_0( io_in[PIN_4])
-            ,.opin_x9y2_0(io_out[PIN_4])
-            ,  .oe_x9y2_0(io_oeb[PIN_4])
-            // PIN_3
-            ,.ipin_x9y1_0( io_in[PIN_3])
-            ,.opin_x9y1_0(io_out[PIN_3])
-            ,  .oe_x9y1_0(io_oeb[PIN_3])
-            );
+
+`ifdef MPRJ_IO_37_IO
+         .`IPIN(`MPRJ_IO_37_CONN) ( io_in[37])
+        ,.`OPIN(`MPRJ_IO_37_CONN) (io_out[37])
+        , .`OEB(`MPRJ_IO_37_CONN) (io_oeb[37])
+`else /* `ifdef MPRJ_IO_37_IO */
+`ifdef MPRJ_IO_37_I
+         .`MPRJ_IO_37_CONN ( io_in[37])
+`else /* `ifdef MPRJ_IO_37_I */
+         .`MPRJ_IO_37_CONN (io_out[37])
+`endif /* `ifdef MPRJ_IO_37_I */
+`endif /* `ifdef MPRJ_IO_37_IO */
+    
+`ifdef MPRJ_IO_36_IO
+        ,.`IPIN(`MPRJ_IO_36_CONN) ( io_in[36])
+        ,.`OPIN(`MPRJ_IO_36_CONN) (io_out[36])
+        , .`OEB(`MPRJ_IO_36_CONN) (io_oeb[36])
+`else /* `ifdef MPRJ_IO_36_IO */
+`ifdef MPRJ_IO_36_I
+        ,.`MPRJ_IO_36_CONN ( io_in[36])
+`else /* `ifdef MPRJ_IO_36_I */
+        ,.`MPRJ_IO_36_CONN (io_out[36])
+`endif /* `ifdef MPRJ_IO_36_I */
+`endif /* `ifdef MPRJ_IO_36_IO */
+    
+`ifdef MPRJ_IO_35_IO
+        ,.`IPIN(`MPRJ_IO_35_CONN) ( io_in[35])
+        ,.`OPIN(`MPRJ_IO_35_CONN) (io_out[35])
+        , .`OEB(`MPRJ_IO_35_CONN) (io_oeb[35])
+`else /* `ifdef MPRJ_IO_35_IO */
+`ifdef MPRJ_IO_35_I
+        ,.`MPRJ_IO_35_CONN ( io_in[35])
+`else /* `ifdef MPRJ_IO_35_I */
+        ,.`MPRJ_IO_35_CONN (io_out[35])
+`endif /* `ifdef MPRJ_IO_35_I */
+`endif /* `ifdef MPRJ_IO_35_IO */
+    
+`ifdef MPRJ_IO_34_IO
+        ,.`IPIN(`MPRJ_IO_34_CONN) ( io_in[34])
+        ,.`OPIN(`MPRJ_IO_34_CONN) (io_out[34])
+        , .`OEB(`MPRJ_IO_34_CONN) (io_oeb[34])
+`else /* `ifdef MPRJ_IO_34_IO */
+`ifdef MPRJ_IO_34_I
+        ,.`MPRJ_IO_34_CONN ( io_in[34])
+`else /* `ifdef MPRJ_IO_34_I */
+        ,.`MPRJ_IO_34_CONN (io_out[34])
+`endif /* `ifdef MPRJ_IO_34_I */
+`endif /* `ifdef MPRJ_IO_34_IO */
+    
+`ifdef MPRJ_IO_33_IO
+        ,.`IPIN(`MPRJ_IO_33_CONN) ( io_in[33])
+        ,.`OPIN(`MPRJ_IO_33_CONN) (io_out[33])
+        , .`OEB(`MPRJ_IO_33_CONN) (io_oeb[33])
+`else /* `ifdef MPRJ_IO_33_IO */
+`ifdef MPRJ_IO_33_I
+        ,.`MPRJ_IO_33_CONN ( io_in[33])
+`else /* `ifdef MPRJ_IO_33_I */
+        ,.`MPRJ_IO_33_CONN (io_out[33])
+`endif /* `ifdef MPRJ_IO_33_I */
+`endif /* `ifdef MPRJ_IO_33_IO */
+    
+`ifdef MPRJ_IO_32_IO
+        ,.`IPIN(`MPRJ_IO_32_CONN) ( io_in[32])
+        ,.`OPIN(`MPRJ_IO_32_CONN) (io_out[32])
+        , .`OEB(`MPRJ_IO_32_CONN) (io_oeb[32])
+`else /* `ifdef MPRJ_IO_32_IO */
+`ifdef MPRJ_IO_32_I
+        ,.`MPRJ_IO_32_CONN ( io_in[32])
+`else /* `ifdef MPRJ_IO_32_I */
+        ,.`MPRJ_IO_32_CONN (io_out[32])
+`endif /* `ifdef MPRJ_IO_32_I */
+`endif /* `ifdef MPRJ_IO_32_IO */
+    
+`ifdef MPRJ_IO_31_IO
+        ,.`IPIN(`MPRJ_IO_31_CONN) ( io_in[31])
+        ,.`OPIN(`MPRJ_IO_31_CONN) (io_out[31])
+        , .`OEB(`MPRJ_IO_31_CONN) (io_oeb[31])
+`else /* `ifdef MPRJ_IO_31_IO */
+`ifdef MPRJ_IO_31_I
+        ,.`MPRJ_IO_31_CONN ( io_in[31])
+`else /* `ifdef MPRJ_IO_31_I */
+        ,.`MPRJ_IO_31_CONN (io_out[31])
+`endif /* `ifdef MPRJ_IO_31_I */
+`endif /* `ifdef MPRJ_IO_31_IO */
+    
+`ifdef MPRJ_IO_30_IO
+        ,.`IPIN(`MPRJ_IO_30_CONN) ( io_in[30])
+        ,.`OPIN(`MPRJ_IO_30_CONN) (io_out[30])
+        , .`OEB(`MPRJ_IO_30_CONN) (io_oeb[30])
+`else /* `ifdef MPRJ_IO_30_IO */
+`ifdef MPRJ_IO_30_I
+        ,.`MPRJ_IO_30_CONN ( io_in[30])
+`else /* `ifdef MPRJ_IO_30_I */
+        ,.`MPRJ_IO_30_CONN (io_out[30])
+`endif /* `ifdef MPRJ_IO_30_I */
+`endif /* `ifdef MPRJ_IO_30_IO */
+    
+`ifdef MPRJ_IO_29_IO
+        ,.`IPIN(`MPRJ_IO_29_CONN) ( io_in[29])
+        ,.`OPIN(`MPRJ_IO_29_CONN) (io_out[29])
+        , .`OEB(`MPRJ_IO_29_CONN) (io_oeb[29])
+`else /* `ifdef MPRJ_IO_29_IO */
+`ifdef MPRJ_IO_29_I
+        ,.`MPRJ_IO_29_CONN ( io_in[29])
+`else /* `ifdef MPRJ_IO_29_I */
+        ,.`MPRJ_IO_29_CONN (io_out[29])
+`endif /* `ifdef MPRJ_IO_29_I */
+`endif /* `ifdef MPRJ_IO_29_IO */
+    
+`ifdef MPRJ_IO_28_IO
+        ,.`IPIN(`MPRJ_IO_28_CONN) ( io_in[28])
+        ,.`OPIN(`MPRJ_IO_28_CONN) (io_out[28])
+        , .`OEB(`MPRJ_IO_28_CONN) (io_oeb[28])
+`else /* `ifdef MPRJ_IO_28_IO */
+`ifdef MPRJ_IO_28_I
+        ,.`MPRJ_IO_28_CONN ( io_in[28])
+`else /* `ifdef MPRJ_IO_28_I */
+        ,.`MPRJ_IO_28_CONN (io_out[28])
+`endif /* `ifdef MPRJ_IO_28_I */
+`endif /* `ifdef MPRJ_IO_28_IO */
+    
+`ifdef MPRJ_IO_27_IO
+        ,.`IPIN(`MPRJ_IO_27_CONN) ( io_in[27])
+        ,.`OPIN(`MPRJ_IO_27_CONN) (io_out[27])
+        , .`OEB(`MPRJ_IO_27_CONN) (io_oeb[27])
+`else /* `ifdef MPRJ_IO_27_IO */
+`ifdef MPRJ_IO_27_I
+        ,.`MPRJ_IO_27_CONN ( io_in[27])
+`else /* `ifdef MPRJ_IO_27_I */
+        ,.`MPRJ_IO_27_CONN (io_out[27])
+`endif /* `ifdef MPRJ_IO_27_I */
+`endif /* `ifdef MPRJ_IO_27_IO */
+    
+`ifdef MPRJ_IO_26_IO
+        ,.`IPIN(`MPRJ_IO_26_CONN) ( io_in[26])
+        ,.`OPIN(`MPRJ_IO_26_CONN) (io_out[26])
+        , .`OEB(`MPRJ_IO_26_CONN) (io_oeb[26])
+`else /* `ifdef MPRJ_IO_26_IO */
+`ifdef MPRJ_IO_26_I
+        ,.`MPRJ_IO_26_CONN ( io_in[26])
+`else /* `ifdef MPRJ_IO_26_I */
+        ,.`MPRJ_IO_26_CONN (io_out[26])
+`endif /* `ifdef MPRJ_IO_26_I */
+`endif /* `ifdef MPRJ_IO_26_IO */
+    
+`ifdef MPRJ_IO_25_IO
+        ,.`IPIN(`MPRJ_IO_25_CONN) ( io_in[25])
+        ,.`OPIN(`MPRJ_IO_25_CONN) (io_out[25])
+        , .`OEB(`MPRJ_IO_25_CONN) (io_oeb[25])
+`else /* `ifdef MPRJ_IO_25_IO */
+`ifdef MPRJ_IO_25_I
+        ,.`MPRJ_IO_25_CONN ( io_in[25])
+`else /* `ifdef MPRJ_IO_25_I */
+        ,.`MPRJ_IO_25_CONN (io_out[25])
+`endif /* `ifdef MPRJ_IO_25_I */
+`endif /* `ifdef MPRJ_IO_25_IO */
+    
+`ifdef MPRJ_IO_24_IO
+        ,.`IPIN(`MPRJ_IO_24_CONN) ( io_in[24])
+        ,.`OPIN(`MPRJ_IO_24_CONN) (io_out[24])
+        , .`OEB(`MPRJ_IO_24_CONN) (io_oeb[24])
+`else /* `ifdef MPRJ_IO_24_IO */
+`ifdef MPRJ_IO_24_I
+        ,.`MPRJ_IO_24_CONN ( io_in[24])
+`else /* `ifdef MPRJ_IO_24_I */
+        ,.`MPRJ_IO_24_CONN (io_out[24])
+`endif /* `ifdef MPRJ_IO_24_I */
+`endif /* `ifdef MPRJ_IO_24_IO */
+    
+`ifdef MPRJ_IO_23_IO
+        ,.`IPIN(`MPRJ_IO_23_CONN) ( io_in[23])
+        ,.`OPIN(`MPRJ_IO_23_CONN) (io_out[23])
+        , .`OEB(`MPRJ_IO_23_CONN) (io_oeb[23])
+`else /* `ifdef MPRJ_IO_23_IO */
+`ifdef MPRJ_IO_23_I
+        ,.`MPRJ_IO_23_CONN ( io_in[23])
+`else /* `ifdef MPRJ_IO_23_I */
+        ,.`MPRJ_IO_23_CONN (io_out[23])
+`endif /* `ifdef MPRJ_IO_23_I */
+`endif /* `ifdef MPRJ_IO_23_IO */
+    
+`ifdef MPRJ_IO_22_IO
+        ,.`IPIN(`MPRJ_IO_22_CONN) ( io_in[22])
+        ,.`OPIN(`MPRJ_IO_22_CONN) (io_out[22])
+        , .`OEB(`MPRJ_IO_22_CONN) (io_oeb[22])
+`else /* `ifdef MPRJ_IO_22_IO */
+`ifdef MPRJ_IO_22_I
+        ,.`MPRJ_IO_22_CONN ( io_in[22])
+`else /* `ifdef MPRJ_IO_22_I */
+        ,.`MPRJ_IO_22_CONN (io_out[22])
+`endif /* `ifdef MPRJ_IO_22_I */
+`endif /* `ifdef MPRJ_IO_22_IO */
+    
+`ifdef MPRJ_IO_21_IO
+        ,.`IPIN(`MPRJ_IO_21_CONN) ( io_in[21])
+        ,.`OPIN(`MPRJ_IO_21_CONN) (io_out[21])
+        , .`OEB(`MPRJ_IO_21_CONN) (io_oeb[21])
+`else /* `ifdef MPRJ_IO_21_IO */
+`ifdef MPRJ_IO_21_I
+        ,.`MPRJ_IO_21_CONN ( io_in[21])
+`else /* `ifdef MPRJ_IO_21_I */
+        ,.`MPRJ_IO_21_CONN (io_out[21])
+`endif /* `ifdef MPRJ_IO_21_I */
+`endif /* `ifdef MPRJ_IO_21_IO */
+    
+`ifdef MPRJ_IO_20_IO
+        ,.`IPIN(`MPRJ_IO_20_CONN) ( io_in[20])
+        ,.`OPIN(`MPRJ_IO_20_CONN) (io_out[20])
+        , .`OEB(`MPRJ_IO_20_CONN) (io_oeb[20])
+`else /* `ifdef MPRJ_IO_20_IO */
+`ifdef MPRJ_IO_20_I
+        ,.`MPRJ_IO_20_CONN ( io_in[20])
+`else /* `ifdef MPRJ_IO_20_I */
+        ,.`MPRJ_IO_20_CONN (io_out[20])
+`endif /* `ifdef MPRJ_IO_20_I */
+`endif /* `ifdef MPRJ_IO_20_IO */
+    
+`ifdef MPRJ_IO_19_IO
+        ,.`IPIN(`MPRJ_IO_19_CONN) ( io_in[19])
+        ,.`OPIN(`MPRJ_IO_19_CONN) (io_out[19])
+        , .`OEB(`MPRJ_IO_19_CONN) (io_oeb[19])
+`else /* `ifdef MPRJ_IO_19_IO */
+`ifdef MPRJ_IO_19_I
+        ,.`MPRJ_IO_19_CONN ( io_in[19])
+`else /* `ifdef MPRJ_IO_19_I */
+        ,.`MPRJ_IO_19_CONN (io_out[19])
+`endif /* `ifdef MPRJ_IO_19_I */
+`endif /* `ifdef MPRJ_IO_19_IO */
+    
+`ifdef MPRJ_IO_18_IO
+        ,.`IPIN(`MPRJ_IO_18_CONN) ( io_in[18])
+        ,.`OPIN(`MPRJ_IO_18_CONN) (io_out[18])
+        , .`OEB(`MPRJ_IO_18_CONN) (io_oeb[18])
+`else /* `ifdef MPRJ_IO_18_IO */
+`ifdef MPRJ_IO_18_I
+        ,.`MPRJ_IO_18_CONN ( io_in[18])
+`else /* `ifdef MPRJ_IO_18_I */
+        ,.`MPRJ_IO_18_CONN (io_out[18])
+`endif /* `ifdef MPRJ_IO_18_I */
+`endif /* `ifdef MPRJ_IO_18_IO */
+    
+`ifdef MPRJ_IO_17_IO
+        ,.`IPIN(`MPRJ_IO_17_CONN) ( io_in[17])
+        ,.`OPIN(`MPRJ_IO_17_CONN) (io_out[17])
+        , .`OEB(`MPRJ_IO_17_CONN) (io_oeb[17])
+`else /* `ifdef MPRJ_IO_17_IO */
+`ifdef MPRJ_IO_17_I
+        ,.`MPRJ_IO_17_CONN ( io_in[17])
+`else /* `ifdef MPRJ_IO_17_I */
+        ,.`MPRJ_IO_17_CONN (io_out[17])
+`endif /* `ifdef MPRJ_IO_17_I */
+`endif /* `ifdef MPRJ_IO_17_IO */
+    
+`ifdef MPRJ_IO_16_IO
+        ,.`IPIN(`MPRJ_IO_16_CONN) ( io_in[16])
+        ,.`OPIN(`MPRJ_IO_16_CONN) (io_out[16])
+        , .`OEB(`MPRJ_IO_16_CONN) (io_oeb[16])
+`else /* `ifdef MPRJ_IO_16_IO */
+`ifdef MPRJ_IO_16_I
+        ,.`MPRJ_IO_16_CONN ( io_in[16])
+`else /* `ifdef MPRJ_IO_16_I */
+        ,.`MPRJ_IO_16_CONN (io_out[16])
+`endif /* `ifdef MPRJ_IO_16_I */
+`endif /* `ifdef MPRJ_IO_16_IO */
+    
+`ifdef MPRJ_IO_15_IO
+        ,.`IPIN(`MPRJ_IO_15_CONN) ( io_in[15])
+        ,.`OPIN(`MPRJ_IO_15_CONN) (io_out[15])
+        , .`OEB(`MPRJ_IO_15_CONN) (io_oeb[15])
+`else /* `ifdef MPRJ_IO_15_IO */
+`ifdef MPRJ_IO_15_I
+        ,.`MPRJ_IO_15_CONN ( io_in[15])
+`else /* `ifdef MPRJ_IO_15_I */
+        ,.`MPRJ_IO_15_CONN (io_out[15])
+`endif /* `ifdef MPRJ_IO_15_I */
+`endif /* `ifdef MPRJ_IO_15_IO */
+    
+`ifdef MPRJ_IO_14_IO
+        ,.`IPIN(`MPRJ_IO_14_CONN) ( io_in[14])
+        ,.`OPIN(`MPRJ_IO_14_CONN) (io_out[14])
+        , .`OEB(`MPRJ_IO_14_CONN) (io_oeb[14])
+`else /* `ifdef MPRJ_IO_14_IO */
+`ifdef MPRJ_IO_14_I
+        ,.`MPRJ_IO_14_CONN ( io_in[14])
+`else /* `ifdef MPRJ_IO_14_I */
+        ,.`MPRJ_IO_14_CONN (io_out[14])
+`endif /* `ifdef MPRJ_IO_14_I */
+`endif /* `ifdef MPRJ_IO_14_IO */
+    
+`ifdef MPRJ_IO_13_IO
+        ,.`IPIN(`MPRJ_IO_13_CONN) ( io_in[13])
+        ,.`OPIN(`MPRJ_IO_13_CONN) (io_out[13])
+        , .`OEB(`MPRJ_IO_13_CONN) (io_oeb[13])
+`else /* `ifdef MPRJ_IO_13_IO */
+`ifdef MPRJ_IO_13_I
+        ,.`MPRJ_IO_13_CONN ( io_in[13])
+`else /* `ifdef MPRJ_IO_13_I */
+        ,.`MPRJ_IO_13_CONN (io_out[13])
+`endif /* `ifdef MPRJ_IO_13_I */
+`endif /* `ifdef MPRJ_IO_13_IO */
+    
+`ifdef MPRJ_IO_12_IO
+        ,.`IPIN(`MPRJ_IO_12_CONN) ( io_in[12])
+        ,.`OPIN(`MPRJ_IO_12_CONN) (io_out[12])
+        , .`OEB(`MPRJ_IO_12_CONN) (io_oeb[12])
+`else /* `ifdef MPRJ_IO_12_IO */
+`ifdef MPRJ_IO_12_I
+        ,.`MPRJ_IO_12_CONN ( io_in[12])
+`else /* `ifdef MPRJ_IO_12_I */
+        ,.`MPRJ_IO_12_CONN (io_out[12])
+`endif /* `ifdef MPRJ_IO_12_I */
+`endif /* `ifdef MPRJ_IO_12_IO */
+    
+`ifdef MPRJ_IO_11_IO
+        ,.`IPIN(`MPRJ_IO_11_CONN) ( io_in[11])
+        ,.`OPIN(`MPRJ_IO_11_CONN) (io_out[11])
+        , .`OEB(`MPRJ_IO_11_CONN) (io_oeb[11])
+`else /* `ifdef MPRJ_IO_11_IO */
+`ifdef MPRJ_IO_11_I
+        ,.`MPRJ_IO_11_CONN ( io_in[11])
+`else /* `ifdef MPRJ_IO_11_I */
+        ,.`MPRJ_IO_11_CONN (io_out[11])
+`endif /* `ifdef MPRJ_IO_11_I */
+`endif /* `ifdef MPRJ_IO_11_IO */
+    
+`ifdef MPRJ_IO_10_IO
+        ,.`IPIN(`MPRJ_IO_10_CONN) ( io_in[10])
+        ,.`OPIN(`MPRJ_IO_10_CONN) (io_out[10])
+        , .`OEB(`MPRJ_IO_10_CONN) (io_oeb[10])
+`else /* `ifdef MPRJ_IO_10_IO */
+`ifdef MPRJ_IO_10_I
+        ,.`MPRJ_IO_10_CONN ( io_in[10])
+`else /* `ifdef MPRJ_IO_10_I */
+        ,.`MPRJ_IO_10_CONN (io_out[10])
+`endif /* `ifdef MPRJ_IO_10_I */
+`endif /* `ifdef MPRJ_IO_10_IO */
+    
+`ifdef MPRJ_IO_9_IO
+        ,.`IPIN(`MPRJ_IO_9_CONN) ( io_in[9])
+        ,.`OPIN(`MPRJ_IO_9_CONN) (io_out[9])
+        , .`OEB(`MPRJ_IO_9_CONN) (io_oeb[9])
+`else /* `ifdef MPRJ_IO_9_IO */
+`ifdef MPRJ_IO_9_I
+        ,.`MPRJ_IO_9_CONN ( io_in[9])
+`else /* `ifdef MPRJ_IO_9_I */
+        ,.`MPRJ_IO_9_CONN (io_out[9])
+`endif /* `ifdef MPRJ_IO_9_I */
+`endif /* `ifdef MPRJ_IO_9_IO */
+    
+`ifdef MPRJ_IO_8_IO
+        ,.`IPIN(`MPRJ_IO_8_CONN) ( io_in[8])
+        ,.`OPIN(`MPRJ_IO_8_CONN) (io_out[8])
+        , .`OEB(`MPRJ_IO_8_CONN) (io_oeb[8])
+`else /* `ifdef MPRJ_IO_8_IO */
+`ifdef MPRJ_IO_8_I
+        ,.`MPRJ_IO_8_CONN ( io_in[8])
+`else /* `ifdef MPRJ_IO_8_I */
+        ,.`MPRJ_IO_8_CONN (io_out[8])
+`endif /* `ifdef MPRJ_IO_8_I */
+`endif /* `ifdef MPRJ_IO_8_IO */
+    
+`ifdef MPRJ_IO_7_IO
+        ,.`IPIN(`MPRJ_IO_7_CONN) ( io_in[7])
+        ,.`OPIN(`MPRJ_IO_7_CONN) (io_out[7])
+        , .`OEB(`MPRJ_IO_7_CONN) (io_oeb[7])
+`else /* `ifdef MPRJ_IO_7_IO */
+`ifdef MPRJ_IO_7_I
+        ,.`MPRJ_IO_7_CONN ( io_in[7])
+`else /* `ifdef MPRJ_IO_7_I */
+        ,.`MPRJ_IO_7_CONN (io_out[7])
+`endif /* `ifdef MPRJ_IO_7_I */
+`endif /* `ifdef MPRJ_IO_7_IO */
+    
+`ifdef MPRJ_IO_6_IO
+        ,.`IPIN(`MPRJ_IO_6_CONN) ( io_in[6])
+        ,.`OPIN(`MPRJ_IO_6_CONN) (io_out[6])
+        , .`OEB(`MPRJ_IO_6_CONN) (io_oeb[6])
+`else /* `ifdef MPRJ_IO_6_IO */
+`ifdef MPRJ_IO_6_I
+        ,.`MPRJ_IO_6_CONN ( io_in[6])
+`else /* `ifdef MPRJ_IO_6_I */
+        ,.`MPRJ_IO_6_CONN (io_out[6])
+`endif /* `ifdef MPRJ_IO_6_I */
+`endif /* `ifdef MPRJ_IO_6_IO */
+    
+`ifdef MPRJ_IO_5_IO
+        ,.`IPIN(`MPRJ_IO_5_CONN) ( io_in[5])
+        ,.`OPIN(`MPRJ_IO_5_CONN) (io_out[5])
+        , .`OEB(`MPRJ_IO_5_CONN) (io_oeb[5])
+`else /* `ifdef MPRJ_IO_5_IO */
+`ifdef MPRJ_IO_5_I
+        ,.`MPRJ_IO_5_CONN ( io_in[5])
+`else /* `ifdef MPRJ_IO_5_I */
+        ,.`MPRJ_IO_5_CONN (io_out[5])
+`endif /* `ifdef MPRJ_IO_5_I */
+`endif /* `ifdef MPRJ_IO_5_IO */
+    
+`ifdef MPRJ_IO_4_IO
+        ,.`IPIN(`MPRJ_IO_4_CONN) ( io_in[4])
+        ,.`OPIN(`MPRJ_IO_4_CONN) (io_out[4])
+        , .`OEB(`MPRJ_IO_4_CONN) (io_oeb[4])
+`else /* `ifdef MPRJ_IO_4_IO */
+`ifdef MPRJ_IO_4_I
+        ,.`MPRJ_IO_4_CONN ( io_in[4])
+`else /* `ifdef MPRJ_IO_4_I */
+        ,.`MPRJ_IO_4_CONN (io_out[4])
+`endif /* `ifdef MPRJ_IO_4_I */
+`endif /* `ifdef MPRJ_IO_4_IO */
+    
+`ifdef MPRJ_IO_3_IO
+        ,.`IPIN(`MPRJ_IO_3_CONN) ( io_in[3])
+        ,.`OPIN(`MPRJ_IO_3_CONN) (io_out[3])
+        , .`OEB(`MPRJ_IO_3_CONN) (io_oeb[3])
+`else /* `ifdef MPRJ_IO_3_IO */
+`ifdef MPRJ_IO_3_I
+        ,.`MPRJ_IO_3_CONN ( io_in[3])
+`else /* `ifdef MPRJ_IO_3_I */
+        ,.`MPRJ_IO_3_CONN (io_out[3])
+`endif /* `ifdef MPRJ_IO_3_I */
+`endif /* `ifdef MPRJ_IO_3_IO */
+    
+`ifdef MPRJ_IO_2_IO
+        ,.`IPIN(`MPRJ_IO_2_CONN) ( io_in[2])
+        ,.`OPIN(`MPRJ_IO_2_CONN) (io_out[2])
+        , .`OEB(`MPRJ_IO_2_CONN) (io_oeb[2])
+`else /* `ifdef MPRJ_IO_2_IO */
+`ifdef MPRJ_IO_2_I
+        ,.`MPRJ_IO_2_CONN ( io_in[2])
+`else /* `ifdef MPRJ_IO_2_I */
+        ,.`MPRJ_IO_2_CONN (io_out[2])
+`endif /* `ifdef MPRJ_IO_2_I */
+`endif /* `ifdef MPRJ_IO_2_IO */
+    
+`ifdef MPRJ_IO_1_IO
+        ,.`IPIN(`MPRJ_IO_1_CONN) ( io_in[1])
+        ,.`OPIN(`MPRJ_IO_1_CONN) (io_out[1])
+        , .`OEB(`MPRJ_IO_1_CONN) (io_oeb[1])
+`else /* `ifdef MPRJ_IO_1_IO */
+`ifdef MPRJ_IO_1_I
+        ,.`MPRJ_IO_1_CONN ( io_in[1])
+`else /* `ifdef MPRJ_IO_1_I */
+        ,.`MPRJ_IO_1_CONN (io_out[1])
+`endif /* `ifdef MPRJ_IO_1_I */
+`endif /* `ifdef MPRJ_IO_1_IO */
+    
+`ifdef MPRJ_IO_0_IO
+        ,.`IPIN(`MPRJ_IO_0_CONN) ( io_in[0])
+        ,.`OPIN(`MPRJ_IO_0_CONN) (io_out[0])
+        , .`OEB(`MPRJ_IO_0_CONN) (io_oeb[0])
+`else /* `ifdef MPRJ_IO_0_IO */
+`ifdef MPRJ_IO_0_I
+        ,.`MPRJ_IO_0_CONN ( io_in[0])
+`else /* `ifdef MPRJ_IO_0_I */
+        ,.`MPRJ_IO_0_CONN (io_out[0])
+`endif /* `ifdef MPRJ_IO_0_I */
+`endif /* `ifdef MPRJ_IO_0_IO */
+   );
    
 endmodule	// user_project_wrapper
 
